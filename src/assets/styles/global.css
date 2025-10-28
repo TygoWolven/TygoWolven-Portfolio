@@ -1,0 +1,96 @@
+/* Fonts */
+@font-face {
+    font-family: "Arges";
+    src: url("/fonts/Arges-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url("/fonts/Poppins-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Doto";
+    src: url("/fonts/Doto-VariableFont_wght.ttf");
+}
+
+/* Custom Properties */
+:root {    
+    /* Base Colors */
+    --white: rgb(245, 245, 245);
+    --grey100: rgb(158, 158, 158);
+    --grey200: rgb(64, 64, 64);
+    --grey300: rgb(58, 58, 58);
+    --grey400: rgb(38, 38, 38);
+    --black: rgb(23, 23, 23);
+
+    /* Primary Colors */
+    --light-blue: rgb(130, 150, 200);
+    --medium-blue: rgb(90, 110, 160);
+    --dark-blue: rgb(60, 80, 130);
+    
+    /* Gradients */
+    --radial-purple: radial-gradient(#E2D9ED, #9883B3);
+    --radial-green: radial-gradient(#B2B2A5, #626259);
+    --radial-yellow: radial-gradient(#FFF9E6, #EAD283);
+    --radial-orange: radial-gradient(#FFF2ED, #F9C0A6);
+    --radial-grey: radial-gradient(#FAFAFA, #8E8E8E);
+    --radial-brown: radial-gradient(#CFC4B8, #837566);
+}
+
+/* Global Styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    list-style: none;
+    color: var(--black);
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins-Regular", Arial, Helvetica, sans-serif;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: unset;
+}
+
+h1,
+h2 {
+    font-weight: 900;
+    font-size: 128px;
+    line-height: 100%;
+    font-family: "Arges", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+.medium-text {
+    line-height: 100%;
+    letter-spacing: -0.04rem;
+	font-size: clamp(20px, 6vw, 32px);
+}
+
+.big-text {
+    line-height: 100%;
+    letter-spacing: -0.04rem;
+    font-size: clamp(24px, 6vw, 36px);
+}

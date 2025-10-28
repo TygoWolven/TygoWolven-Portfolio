@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Chevron from '../components/atoms/Chevron.astro';
+---
+
+<Layout>
+	<main>
+		<section id="home">
+			<h1>Creative Frontender</h1>
+		</section>
+
+		<section id="about">
+			<h2>What do I do?</h2>
+			<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven">
+			<p class="big-text">
+				My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
+				experiences. Every project is a new oppurtunity to make the web a better place for everyone.
+			</p>
+		</section>
+
+		<section id="work">
+			<h2>Work</h2>
+			<ul>
+				<li>
+					<a href="/fresk-digital">
+						<img src="/images/Fresk-Digital.png" alt="">
+						<h3>Fresk Digital</h3>
+					</a>
+				</li>
+			</ul>
+			<a href="/work">See all <Chevron color="var(--black)"/></a>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	#home {
+		margin: 0 1rem;
+
+		h1 {
+			text-align: center;
+		}
+	}
+
+	#about {
+		margin: 144px 1rem;
+
+		h2 {
+			font-size: 16px;
+			line-height: 100%;
+			letter-spacing: -0.04rem;
+    		font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+		}
+
+		img {
+			width: 100%;
+			margin: 1rem 0;
+			border-radius: 1rem;
+			padding: 1rem 7rem 0 7rem;
+			background: var(--light-blue);
+		}
+	}
+
+	#work {
+		margin: 0 1rem;
+
+		ul {
+			li {
+				a {
+					display: flex;
+					flex-direction: column;
+
+					img {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		a {
+			display: flex;
+			align-items: center;
+			justify-self: center;
+
+			font-size: 18px;
+			font-family: "Poppins-SemiBold";
+		}
+	}
+</style>
