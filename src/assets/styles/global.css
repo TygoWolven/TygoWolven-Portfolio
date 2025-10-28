@@ -76,8 +76,8 @@ h4 {
 
 h1,
 h2 {
+    font-size: 96px;
     font-weight: 900;
-    font-size: 128px;
     line-height: 100%;
     font-family: "Arges", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;

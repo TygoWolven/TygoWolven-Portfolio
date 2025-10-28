@@ -24,7 +24,25 @@ import Chevron from '../components/atoms/Chevron.astro';
 				<li>
 					<a href="/fresk-digital">
 						<img src="/images/Fresk-Digital.png" alt="">
-						<h3>Fresk Digital</h3>
+						<div>
+							<div>
+								<img src="/images/Fresk-Digital-Logo.png" alt="">
+								<h3>Fresk Digital</h3>
+							</div>
+							<p>2024</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="/de-hallen">
+						<img src="/images/De-Hallen.png" alt="">
+						<div>
+							<div>
+								<img src="/images/De-Hallen-Logo.png" alt="">
+								<h3>De Hallen</h3>
+							</div>
+							<p>2025</p>
+						</div>
 					</a>
 				</li>
 			</ul>
@@ -43,7 +61,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 	}
 
 	#about {
-		margin: 144px 1rem;
+		margin: 96px 1rem;
 
 		h2 {
 			font-size: 16px;
@@ -65,22 +83,70 @@ import Chevron from '../components/atoms/Chevron.astro';
 		margin: 0 1rem;
 
 		ul {
+			gap: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+
 			li {
+				padding: 1rem;
+				border-radius: 1rem;
+				background: var(--black);
+
 				a {
 					display: flex;
 					flex-direction: column;
-
-					img {
+					
+					& > img {
 						width: 100%;
+						padding: 1rem 2rem;
+						border-radius: 0.5rem;
 					}
+					
+					& > div {
+						width: 100%;
+						display: flex;
+						margin-top: 1rem;
+						align-items: center;
+						justify-content: space-between;
+
+						div {
+							gap: 0.5rem;
+							display: flex;
+							align-items: center;
+
+							img {
+								border-radius: 50%;
+							}
+
+							h3 {
+								color: var(--white);
+								text-transform: uppercase;
+								font-family: "Poppins-SemiBold";
+							}
+						}
+
+						p {
+							color: var(--white);
+							opacity: 0.6;
+						}
+					}
+				}
+
+				&:nth-of-type(1) a img {
+					background: var(--radial-purple);
+				}
+
+				&:nth-of-type(2) a img {
+					background: var(--radial-green);
 				}
 			}
 		}
 
-		a {
+		& > a {
 			display: flex;
 			align-items: center;
 			justify-self: center;
+			margin: 32px 0 96px 0;
 
 			font-size: 18px;
 			font-family: "Poppins-SemiBold";
