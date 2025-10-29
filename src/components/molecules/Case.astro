@@ -1,0 +1,71 @@
+---
+// Dynamic Content
+const { link, image, logo, title, date } = Astro.props;
+---
+
+<li>
+	<a href={ link }>
+		<div class="image-wrapper">
+            <img src={ image } alt="Preview of the case." />
+		</div>
+		<div class="content-wrapper">
+            <div>
+                <img src={ logo } alt="Logo of the case.">
+                <h3>{ title }</h3>
+            </div>
+            <p>{ date }</p>
+		</div>
+	</a>
+</li>
+
+<style>
+    li {
+        background: var(--black);
+        border-radius: 1rem;
+        padding: 1rem;
+        width: 100%;
+        
+        @media (min-width: 768px) {
+            width: calc(50% - 0.5rem);
+        }
+        
+        a {
+            .image-wrapper {
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+        
+                img {							
+                    width: 100%;
+                    border-radius: 0.25rem;
+                }
+
+            }
+        
+            .content-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 16px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin-right: 1rem;
+                    }
+                }
+
+                h3, p {
+					color: var(--white);
+					text-transform: uppercase;
+					font-family: "Poppins-SemiBold";
+                }
+
+                p {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+</style>

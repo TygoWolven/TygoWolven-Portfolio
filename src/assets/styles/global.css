@@ -94,3 +94,18 @@ h2 {
     letter-spacing: -0.04rem;
     font-size: clamp(24px, 6vw, 36px);
 }
+
+ul.tags {
+	gap: 4px;			
+	display: flex;
+	flex-wrap: wrap;
+
+	li {			
+		color: var(--white);
+		background: var(--grey300);
+		padding: 4px 8px;
+		border-radius: 4px;
+		text-transform: uppercase;
+		font-family: "Doto", Arial, Helvetica, sans-serif;
+	}
+}

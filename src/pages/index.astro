@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Case from '../components/molecules/Case.astro';
 import Chevron from '../components/atoms/Chevron.astro';
 ---
 
@@ -21,32 +22,71 @@ import Chevron from '../components/atoms/Chevron.astro';
 		<section id="work">
 			<h2>Work</h2>
 			<ul>
-				<li>
-					<a href="/fresk-digital">
-						<img src="/images/Fresk-Digital.png" alt="">
-						<div>
-							<div>
-								<img src="/images/Fresk-Digital-Logo.png" alt="">
-								<h3>Fresk Digital</h3>
-							</div>
-							<p>2024</p>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="/de-hallen">
-						<img src="/images/De-Hallen.png" alt="">
-						<div>
-							<div>
-								<img src="/images/De-Hallen-Logo.png" alt="">
-								<h3>De Hallen</h3>
-							</div>
-							<p>2025</p>
-						</div>
-					</a>
-				</li>
+            	<Case 
+            	    link="/fresk-digital"
+            	    image="/images/Fresk-Digital.png"
+            	    logo="/images/Fresk-Digital-Logo.png"
+            	    title="Fresk Digital"
+            	    date="2024"
+            	/>
+            	<Case 
+            	    link="/de-hallen"
+            	    image="/images/De-Hallen.png"
+            	    logo="/images/De-Hallen-Logo.png"
+            	    title="De Hallen"
+            	    date="2024"
+            	/>
 			</ul>
 			<a href="/work">See all <Chevron color="var(--black)"/></a>
+		</section>
+
+		<section id="services">
+			<ul>
+				<li>
+					<h3>Design</h3>
+					<p class="big-text">
+						Every project starts with understanding the goal and the user. I create wireframes 
+						and visual concepts — creating a strong foundation that will fit your needs.
+					</p>
+					<ul class="tags">
+						<li>Figma</li>
+						<li>Research</li>
+						<li>Wireframing</li>
+						<li>UI</li>
+						<li>UX</li>
+						<li>Web Design</li>
+						<li>Prototyping</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Development</h3>
+					<p class="big-text">
+						I turn the design into a fully functioning website using clean, structured code 
+						— focusing on responsiveness, performance, accessibility and progressive enhancements.
+					</p>
+					<ul class="tags">
+						<li>Frontend</li>
+						<li>Web Standards</li>
+						<li>Frameworks</li>
+						<li>CMS</li>
+						<li>API</li>
+						<li>Databases</li>
+						<li>Conventions</li>
+					</ul>
+				</li>
+				<li>
+					<h3>Detailing</h3>
+					<p class="big-text">
+						This is where I refine the details. I optimize the user-experience, test across devices, 
+						and continue polishing until everything looks and feels just right — visually and technically.
+					</p>
+					<ul class="tags">
+						<li>Refactoring</li>
+						<li>Animating</li>
+						<li>Optimizing</li>
+					</ul>
+				</li>
+			</ul>
 		</section>
 	</main>
 </Layout>
@@ -56,6 +96,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 		margin: 0 1rem;
 
 		h1 {
+			margin-top: 96px;
 			text-align: center;
 		}
 	}
@@ -87,58 +128,11 @@ import Chevron from '../components/atoms/Chevron.astro';
 			display: flex;
 			flex-wrap: wrap;
 
-			li {
-				padding: 1rem;
-				border-radius: 1rem;
-				background: var(--black);
-
-				a {
-					display: flex;
-					flex-direction: column;
-					
-					& > img {
-						width: 100%;
-						padding: 1rem 2rem;
-						border-radius: 0.5rem;
-					}
-					
-					& > div {
-						width: 100%;
-						display: flex;
-						margin-top: 1rem;
-						align-items: center;
-						justify-content: space-between;
-
-						div {
-							gap: 0.5rem;
-							display: flex;
-							align-items: center;
-
-							img {
-								border-radius: 50%;
-							}
-
-							h3 {
-								color: var(--white);
-								text-transform: uppercase;
-								font-family: "Poppins-SemiBold";
-							}
-						}
-
-						p {
-							color: var(--white);
-							opacity: 0.6;
-						}
-					}
-				}
-
-				&:nth-of-type(1) a img {
-					background: var(--radial-purple);
-				}
-
-				&:nth-of-type(2) a img {
-					background: var(--radial-green);
-				}
+			li:nth-of-type(1) .image-wrapper {
+				background: var(--radial-purple);
+			}
+			li:nth-of-type(2) .image-wrapper {
+				background: var(--radial-green);
 			}
 		}
 
@@ -150,6 +144,28 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 			font-size: 18px;
 			font-family: "Poppins-SemiBold";
+		}
+	}
+
+	#services {
+		margin: 0 1rem;
+
+		ul:not(ul.tags) {
+			gap: 3rem;
+			display: flex;
+			margin-bottom: 96px;
+			flex-direction: column;
+
+			li {
+				h3 {
+					text-transform: uppercase;
+					font-family: "Poppins-SemiBold";
+				}
+
+				p {
+					margin: 1rem 0 1.5rem 0;
+				}
+			}
 		}
 	}
 </style>

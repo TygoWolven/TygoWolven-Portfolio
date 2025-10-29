@@ -11,7 +11,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 		<section id="information">
 			<a href="/work"><Chevron color="var(--black)"/> Return</a>
 			<h1>Fresk Digital</h1>
-			<ul>
+			<ul class="tags">
 				<li>Node</li>
 				<li>Express</li>
 				<li>View-transitions</li>
@@ -67,23 +67,6 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 			svg {
 				transform: rotate(180deg);
-			}
-		}
-
-		ul {
-			gap: 4px;			
-			display: flex;
-			flex-wrap: wrap;
-
-			li {			
-				color: var(--white);
-				background: var(--grey300);
-
-				padding: 4px 8px;
-				border-radius: 4px;
-
-				text-transform: uppercase;
-				font-family: "Doto", Arial, Helvetica, sans-serif;
 			}
 		}
 		
