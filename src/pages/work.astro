@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 // Import Components
 import Case from '../components/molecules/Case.astro';
+import Chevron from '../components/atoms/Chevron.astro';
 ---
 
 <Layout>
@@ -54,6 +55,7 @@ import Case from '../components/molecules/Case.astro';
             	    date="2024"
             	/>
 			</ul>
+			<a href="https://github.com/TygoWolven?tab=repositories" target="_blank" class="cta-link">Check out my Github <Chevron color="var(--black)"/></a>
 		</section>
 	</main>
 </Layout>
@@ -63,14 +65,14 @@ import Case from '../components/molecules/Case.astro';
 		margin: 0 1rem;
 		
 		h1 {
-			padding-top: 96px;
+			margin: 6rem 0 3rem 0;
+			text-box: trim-both cap alphabetic;
 		}
 		
 		ul {
-			gap: 1rem;
+			gap: 3rem;
 			display: flex;
 			flex-wrap: wrap;
-			margin-bottom: 96px;
 
 			li:nth-of-type(1) .image-wrapper {
 				background: var(--radial-purple);

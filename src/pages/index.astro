@@ -37,11 +37,12 @@ import Chevron from '../components/atoms/Chevron.astro';
             	    date="2024"
             	/>
 			</ul>
-			<a href="/work">See all <Chevron color="var(--black)"/></a>
+			<a href="/work" class="cta-link">See all <Chevron color="var(--black)"/></a>
 		</section>
 
 		<section id="services">
-			<ul>
+			<h2>Services</h2>
+			<ul class="sticky-list">
 				<li>
 					<h3>Design</h3>
 					<p class="big-text">
@@ -123,8 +124,13 @@ import Chevron from '../components/atoms/Chevron.astro';
 	#work {
 		margin: 0 1rem;
 
+		h2 {
+			margin-bottom: 3rem;
+			text-box: trim-both cap alphabetic;
+		}
+
 		ul {
-			gap: 1rem;
+			gap: 3rem;
 			display: flex;
 			flex-wrap: wrap;
 
@@ -135,35 +141,42 @@ import Chevron from '../components/atoms/Chevron.astro';
 				background: var(--radial-green);
 			}
 		}
-
-		& > a {
-			display: flex;
-			align-items: center;
-			justify-self: center;
-			margin: 32px 0 96px 0;
-
-			font-size: 18px;
-			font-family: "Poppins-SemiBold";
-		}
 	}
 
 	#services {
 		margin: 0 1rem;
 
-		ul:not(ul.tags) {
+		h2 {
+			margin-bottom: 3rem;
+			text-box: trim-both cap alphabetic;
+		}
+
+		ul.sticky-list {
 			gap: 3rem;
 			display: flex;
-			margin-bottom: 96px;
+			margin-bottom: 6rem;
 			flex-direction: column;
 
-			li {
+			& > li {
+				top: 2rem;
+				padding: 2rem 0;
+				position: sticky;
+				background: var(--white);
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+				&:nth-of-type(2) {
+					top: 7rem;
+				}
+				
 				h3 {
+					line-height: 1;
 					text-transform: uppercase;
+					font-size: var(--sticky-size);
 					font-family: "Poppins-SemiBold";
 				}
-
+				
 				p {
-					margin: 1rem 0 1.5rem 0;
+					margin: 2rem 0 1.5rem 0;
 				}
 			}
 		}

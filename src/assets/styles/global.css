@@ -41,6 +41,9 @@
     --radial-orange: radial-gradient(#FFF2ED, #F9C0A6);
     --radial-grey: radial-gradient(#FAFAFA, #8E8E8E);
     --radial-brown: radial-gradient(#CFC4B8, #837566);
+
+    /* Font-sizes */
+    --sticky-size: 16px;
 }
 
 /* Global Styling */
@@ -108,4 +111,14 @@ ul.tags {
 		text-transform: uppercase;
 		font-family: "Doto", Arial, Helvetica, sans-serif;
 	}
+}
+
+.cta-link {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: 3rem 0 6rem 0;
+    
+    font-size: 18px;
+    font-family: "Poppins-SemiBold";
 }
