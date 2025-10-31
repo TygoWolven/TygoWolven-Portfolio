@@ -1,0 +1,31 @@
+---
+// Import Components
+import Cases from "../molecules/Cases.astro"
+import Link from "../atoms/Link.astro"
+---
+
+<section>
+	<h2>Work</h2>
+	<Cases />
+	<Link 
+		link="/work"
+		label="See all"
+	/>
+</section>
+
+<style>
+    section {
+        h2 {
+            margin-bottom: 3rem;
+            text-box: trim-both cap alphabetic;
+        }
+
+        ul {
+            li:nth-of-type(2) {
+                ~ li {
+                    display: none;
+                }
+            }
+        }
+    }
+</style>

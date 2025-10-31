@@ -1,0 +1,89 @@
+---
+// Import all the layout-components
+import Case from "../atoms/Case.astro"
+---
+
+<ul>
+    <Case 
+        link="/fresk-digital"
+        image="/images/Fresk-Digital.png"
+        logo="/images/Fresk-Digital-Logo.png"
+        title="Fresk Digital"
+        date="2024"
+    />
+    <Case 
+        link="/de-hallen"
+        image="/images/De-Hallen.png"
+        logo="/images/De-Hallen-Logo.png"
+        title="De Hallen"
+        date="2024"
+    />
+    <Case 
+        link="/business-news-radio"
+        image="/images/Business-News-Radio.png"
+        logo="/images/Business-News-Radio-Logo.png"
+        title="Business News Radio"
+        date="2024"
+    />
+    <Case 
+        link="/wogo-cocktail-walks"
+        image="/images/WOGO-Cocktail-Walks.png"
+        logo="/images/WOGO-Cocktail-Walks-Logo.png"
+        title="WOGO Cocktail Walks"
+        date="2024"
+    />
+    <Case 
+        link="/squadpage"
+        image="/images/Squadpage.png"
+        logo="/images/Squadpage-Logo.png"
+        title="Squadpage"
+        date="2024"
+    />
+    <Case 
+        link="/learning-blog"
+        image="/images/Learning-Blog.png"
+        logo="/images/Learning-Blog-Logo.png"
+        title="Learning Blog"
+        date="2024"
+    />
+</ul>
+
+<style>
+    ul {
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: 768px) {
+            gap: 4rem 2rem;
+
+            li {
+                width: calc(50% - 1rem);
+            }
+        }
+
+		li:nth-of-type(1) .image-wrapper {
+			background: var(--radial-purple);
+		}
+
+		li:nth-of-type(2) .image-wrapper {
+			background: var(--radial-green);
+		}
+
+		li:nth-of-type(3) .image-wrapper {
+			background: var(--radial-yellow);
+		}
+
+		li:nth-of-type(4) .image-wrapper {
+			background: var(--radial-orange);
+		}
+
+		li:nth-of-type(5) .image-wrapper {
+			background: var(--radial-grey);
+		}
+        
+		li:nth-of-type(6) .image-wrapper {
+			background: var(--radial-brown);
+		}
+	}
+</style>

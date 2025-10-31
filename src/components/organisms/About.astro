@@ -11,10 +11,29 @@
 
 <style>
     section {
+		gap: 1rem 0;
 		display: grid;
-		grid-template-areas:
-		"title sticky-container"
-		"paragraph sticky-container";
+		grid-template-areas: 
+		"title"
+		"sticky-container"
+		"paragraph";
+		
+		@media (min-width: 768px) {
+			gap: 0 4rem;
+			grid-template-areas:
+			"title sticky-container"
+			"paragraph sticky-container";
+			grid-template-columns: 3fr 2fr;
+
+			div.sticky-container {
+				grid-area: sticky-container;	
+	
+				img {
+					top: 2rem;
+					position: sticky;
+				}
+			}
+		}
 
 		h2 {
 			grid-area: title;
@@ -23,25 +42,22 @@
 			letter-spacing: -0.04rem;
     		font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
 		}
-
-		div.sticky-container {
-			grid-area: sticky-container;	
-
-			img {
-				top: 2rem;
-				position: sticky;
-				aspect-ratio: 16/9;
-				object-fit: contain;
-				border-radius: 1rem;
-				background: var(--light-blue);
-			}
+		
+		img {
+			width: 100%;
+			aspect-ratio: 16/9;
+			border-radius: 1rem;
+			object-fit: contain;
+			background: var(--light-blue);
 		}
+		
 
 		p {
 			grid-area: paragraph;
 			line-height: 150%;
 			font-weight: 600;
 			font-size: 64px;
+			font-size: clamp(24px, 3vw, 64px);
 		}
     }
 </style>

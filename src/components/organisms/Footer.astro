@@ -18,7 +18,7 @@
     <div id="links">
         <div>
             <h4>Navigation</h4>
-            <ul>
+            <ul class="hover-list">
                 <li>
                     <a href="/">Home</a>
                 </li>
@@ -35,7 +35,7 @@
         </div>
         <div>
             <h4>Social Media</h4>
-            <ul>
+            <ul class="hover-list">
                 <li>
                     <a href="https://github.com/TygoWolven" target="_blank">Github</a>
                 </li>
@@ -97,8 +97,13 @@
         #contact {
             display: flex;
             align-items: center;
+            transition: 0.2s ease;
             justify-content: center;
             border-bottom: 1px solid var(--grey400);
+
+            &:hover {
+                background: var(--grey400);
+            }
         }
 
         #next-page {

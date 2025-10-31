@@ -1,0 +1,26 @@
+---
+// Dynamic Content
+const { link, target, label } = Astro.props;
+
+// Import all the layout-components
+import Chevron from "./Chevron.astro"
+---
+
+<a href={ link } target={ target }>{ label } <Chevron color="var(--black)"/></a>
+
+<style>
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        margin-top: 3rem;
+        font-family: "Poppins-SemiBold";
+        font-size: clamp(18px, 4vw, 24px);
+        
+        svg {
+            scale: 1.25;
+            margin-left: 8px;
+        }
+    }
+</style>

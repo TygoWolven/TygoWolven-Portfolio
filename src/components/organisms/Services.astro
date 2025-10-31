@@ -1,0 +1,95 @@
+<section>
+	<h2>Services</h2>
+	<ul class="sticky-list">
+		<li>
+			<h3>Design</h3>
+			<p class="big-text">
+				Every project starts with understanding the goal and the user. I create wireframes 
+				and visual concepts — creating a strong foundation that will fit your needs.
+			</p>
+			<ul class="tags">
+				<li>Figma</li>
+				<li>Research</li>
+				<li>Wireframing</li>
+				<li>UI</li>
+				<li>UX</li>
+				<li>Web Design</li>
+				<li>Prototyping</li>
+			</ul>
+		</li>
+		<li>
+			<h3>Development</h3>
+			<p class="big-text">
+				I turn the design into a fully functioning website using clean, structured code 
+				— focusing on responsiveness, performance, accessibility and progressive enhancements.
+			</p>
+			<ul class="tags">
+				<li>Frontend</li>
+				<li>Web Standards</li>
+				<li>Frameworks</li>
+				<li>CMS</li>
+				<li>API</li>
+				<li>Databases</li>
+				<li>Conventions</li>
+			</ul>
+		</li>
+		<li>
+			<h3>Detailing</h3>
+			<p class="big-text">
+				This is where I refine the details. I optimize the user-experience, test across devices, 
+				and continue polishing until everything looks and feels just right — visually and technically.
+			</p>
+			<ul class="tags">
+				<li>Refactoring</li>
+				<li>Animating</li>
+				<li>Optimizing</li>
+			</ul>
+		</li>
+	</ul>
+</section>
+
+<style>
+	section {
+		margin: 0;
+		background: var(--black);
+		padding: var(--section-width);
+
+		h2 {
+			color: var(--white);
+			margin-bottom: 3rem;
+			text-box: trim-both cap alphabetic;
+		}
+		
+		ul.sticky-list {
+			gap: 3rem;
+			display: flex;
+			flex-direction: column;
+			
+			& > li {
+				top: 2rem;
+				padding: 2rem 0;
+				position: sticky;
+				background: var(--black);
+				border-top: 1px solid var(--grey400);
+				
+				&:nth-of-type(2) {
+					top: 7rem;
+				}
+				
+				h3 {
+					line-height: 1;
+					color: var(--grey100);
+					text-transform: uppercase;
+					font-size: var(--sticky-size);
+					font-family: "Poppins-SemiBold";
+				}
+				
+				p {
+					max-width: 48ch;
+					color: var(--white);
+					margin: 2rem 0 1.5rem 0;
+				}
+			}
+		}
+	}  
+</style>

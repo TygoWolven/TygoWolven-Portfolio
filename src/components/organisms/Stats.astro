@@ -1,0 +1,45 @@
+<section>
+	<ul>
+		<li>
+			<p><span>4</span>Years of Experience</p>
+		</li>
+		<li>
+			<p><span>12</span>Projects made for real companies</p>
+		</li>
+		<li>
+			<p><span>8+</span>Redesigns for this portfolio</p>
+		</li>
+	</ul>
+</section>
+
+<style>
+    section {
+		ul {
+			gap: 6rem;
+			display: flex;
+			flex-direction: column;
+			
+			@media (min-width: 768px) {
+				gap: unset;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			li {
+				p {
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					color: var(--grey100);
+					font-weight: 600;
+					
+					span {
+						line-height: 1;
+						font-size: 96px;
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+	}
+</style>
