@@ -22,14 +22,14 @@ import Chevron from '../components/atoms/Chevron.astro';
 			</ul>
 			<img src="/images/Fresk-Digital.png" alt="Desktop Preview">
 			<div>
-				<div>
+				<article>
 					<h2 class="medium-text">Product-type</h2>
 					<p class="medium-text">Private Dashboard</p>
-				</div>
-				<div>
+				</article>
+				<article>
 					<h2 class="medium-text">Service</h2>
 					<p class="medium-text">Design & Development</p>
-				</div>
+				</article>
 			</div>
 			<p class="big-text">
 				In the first year of my study, I designed and developed a data-driven dashboard that visualizes 
@@ -55,11 +55,8 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 <style>
 	#information {
-		margin: 0 1rem;
-
 		a {
 			display: flex;
-			margin: 1rem 0;
 			align-items: center;
 
 			font-size: 18px;
@@ -72,7 +69,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 		
 		img {
 			width: 100%;
-			margin: 64px 0;
+			margin: 4rem 0;
 			padding: 1rem 2rem;
 			background: var(--radial-purple);
 		}
@@ -81,15 +78,22 @@ import Chevron from '../components/atoms/Chevron.astro';
 			gap: 3rem;
 			display: flex;
 			flex-direction: column;
+			
+			@media (min-width: 768px) {
+				flex-direction: row;
+				justify-content: space-between;
+			}
 
-			div {
+			article {
 				gap: 1rem;
-
+				display: flex;
+				flex-direction: column;
+	
 				h2 {
 					text-transform: initial;
-    				font-family: "Poppins-Regular", Arial, Helvetica, sans-serif;
+					font-family: "Poppins-Regular", Arial, Helvetica, sans-serif;
 				}
-
+	
 				p {
 					opacity: 0.6;
 				}
@@ -97,11 +101,12 @@ import Chevron from '../components/atoms/Chevron.astro';
 		}
 
 		& > p {
-			margin: 144px 0;
+			margin-top: 6rem;
 		}
 	}
 	
 	#preview {
+		margin: 0;
 		height: 100vh;
 		background: var(--black);
 
@@ -111,10 +116,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 		
 		img {
 			width: calc(100% - 2rem);
+			max-width: 844px;
 		}
-	}
-	
-	#challenge {
-		margin: 144px 1rem;
 	}
 </style>

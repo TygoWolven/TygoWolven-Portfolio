@@ -1,7 +1,8 @@
 ---
+// Import Layout Components
 import Layout from '../layouts/Layout.astro';
-import Case from '../components/molecules/Case.astro';
-import Chevron from '../components/atoms/Chevron.astro';
+import AboutSection from '../components/organisms/AboutSection.astro';
+import WorkSection from '../components/organisms/WorkSection.astro';
 ---
 
 <Layout>
@@ -10,35 +11,9 @@ import Chevron from '../components/atoms/Chevron.astro';
 			<h1>Creative Frontender</h1>
 		</section>
 
-		<section id="about">
-			<h2>What do I do?</h2>
-			<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven">
-			<p class="big-text">
-				My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
-				experiences. Every project is a new oppurtunity to make the web a better place for everyone.
-			</p>
-		</section>
+		<AboutSection />
 
-		<section id="work">
-			<h2>Work</h2>
-			<ul>
-            	<Case 
-            	    link="/fresk-digital"
-            	    image="/images/Fresk-Digital.png"
-            	    logo="/images/Fresk-Digital-Logo.png"
-            	    title="Fresk Digital"
-            	    date="2024"
-            	/>
-            	<Case 
-            	    link="/de-hallen"
-            	    image="/images/De-Hallen.png"
-            	    logo="/images/De-Hallen-Logo.png"
-            	    title="De Hallen"
-            	    date="2024"
-            	/>
-			</ul>
-			<a href="/work" class="cta-link">See all <Chevron color="var(--black)"/></a>
-		</section>
+		<WorkSection />
 
 		<section id="services">
 			<h2>Services</h2>
@@ -94,58 +69,14 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 <style>
 	#home {
-		margin: 0 1rem;
-
+		height: 100vh;
+		
 		h1 {
-			margin-top: 96px;
 			text-align: center;
 		}
 	}
 
-	#about {
-		margin: 96px 1rem;
-
-		h2 {
-			font-size: 16px;
-			line-height: 100%;
-			letter-spacing: -0.04rem;
-    		font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
-		}
-
-		img {
-			width: 100%;
-			margin: 1rem 0;
-			border-radius: 1rem;
-			padding: 1rem 7rem 0 7rem;
-			background: var(--light-blue);
-		}
-	}
-
-	#work {
-		margin: 0 1rem;
-
-		h2 {
-			margin-bottom: 3rem;
-			text-box: trim-both cap alphabetic;
-		}
-
-		ul {
-			gap: 3rem;
-			display: flex;
-			flex-wrap: wrap;
-
-			li:nth-of-type(1) .image-wrapper {
-				background: var(--radial-purple);
-			}
-			li:nth-of-type(2) .image-wrapper {
-				background: var(--radial-green);
-			}
-		}
-	}
-
 	#services {
-		margin: 0 1rem;
-
 		h2 {
 			margin-bottom: 3rem;
 			text-box: trim-both cap alphabetic;
@@ -154,7 +85,6 @@ import Chevron from '../components/atoms/Chevron.astro';
 		ul.sticky-list {
 			gap: 3rem;
 			display: flex;
-			margin-bottom: 6rem;
 			flex-direction: column;
 
 			& > li {
@@ -176,6 +106,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 				}
 				
 				p {
+					max-width: 48ch;
 					margin: 2rem 0 1.5rem 0;
 				}
 			}

@@ -1,0 +1,47 @@
+<section>
+    <h2>What do I do?</h2>
+	<div class="sticky-container">
+		<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven">
+	</div>
+	<p class="big-text">
+		My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
+		experiences. Every project is a new oppurtunity to make the web a better place for everyone.
+	</p>
+</section>
+
+<style>
+    section {
+		display: grid;
+		grid-template-areas:
+		"title sticky-container"
+		"paragraph sticky-container";
+
+		h2 {
+			grid-area: title;
+			font-size: 16px;
+			line-height: 100%;
+			letter-spacing: -0.04rem;
+    		font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+		}
+
+		div.sticky-container {
+			grid-area: sticky-container;	
+
+			img {
+				top: 2rem;
+				position: sticky;
+				aspect-ratio: 16/9;
+				object-fit: contain;
+				border-radius: 1rem;
+				background: var(--light-blue);
+			}
+		}
+
+		p {
+			grid-area: paragraph;
+			line-height: 150%;
+			font-weight: 600;
+			font-size: 64px;
+		}
+    }
+</style>

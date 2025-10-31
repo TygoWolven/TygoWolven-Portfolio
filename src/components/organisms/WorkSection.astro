@@ -1,0 +1,54 @@
+---
+// Import Components
+import Case from "../molecules/Case.astro"
+import Chevron from "../atoms/Chevron.astro"
+---
+
+<section>
+	<h2>Work</h2>
+	<ul>
+    	<Case 
+    	    link="/fresk-digital"
+    	    image="/images/Fresk-Digital.png"
+    	    logo="/images/Fresk-Digital-Logo.png"
+    	    title="Fresk Digital"
+    	    date="2024"
+    	/>
+    	<Case 
+    	    link="/de-hallen"
+    	    image="/images/De-Hallen.png"
+    	    logo="/images/De-Hallen-Logo.png"
+    	    title="De Hallen"
+    	    date="2024"
+    	/>
+	</ul>
+	<a href="/work" class="cta-link">See all <Chevron color="var(--black)"/></a>
+</section>
+
+<style>
+    section {
+        h2 {
+            margin-bottom: 3rem;
+            text-box: trim-both cap alphabetic;
+        }
+    
+        ul {
+            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (min-width: 768px) {
+                li {
+                    width: calc(50% - 1rem);
+                }
+            }
+    
+            li:nth-of-type(1) .image-wrapper {
+                background: var(--radial-purple);
+            }
+            li:nth-of-type(2) .image-wrapper {
+                background: var(--radial-green);
+            }
+        }
+    }
+</style>

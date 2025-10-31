@@ -44,9 +44,17 @@
 
     /* Font-sizes */
     --sticky-size: 16px;
+
+    /* Margins & Paddings */
+    --section-width: 6rem 1rem;
+
+    @media (min-width: 768px) {
+        /* Margins & Paddings */
+        --section-width: 6rem 2rem;
+    }
 }
 
-/* Global Styling */
+/* Global Styling for all elements */
 * {
     margin: 0;
     padding: 0;
@@ -62,30 +70,38 @@
     }
 }
 
+/* Global Styling for specific elements */
 html {
     scroll-behavior: smooth;
+
+    body {
+        background: var(--white);
+    
+        section {
+            margin: var(--section-width);
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-weight: unset;
+            }
+            
+            h1,
+            h2 {
+                font-size: 96px;
+                font-weight: 900;
+                line-height: 100%;
+                text-transform: uppercase;
+                font-family: "Arges", Arial, Helvetica, sans-serif;
+
+                font-size: clamp(96px, 12vw, 200px);
+            }
+        }
+    }
 }
 
-body {
-    background: var(--white);
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-weight: unset;
-}
-
-h1,
-h2 {
-    font-size: 96px;
-    font-weight: 900;
-    line-height: 100%;
-    font-family: "Arges", Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
-}
-
+/* Reusable Classes */
 .medium-text {
     line-height: 100%;
     letter-spacing: -0.04rem;
@@ -116,9 +132,9 @@ ul.tags {
 .cta-link {
     display: flex;
     align-items: center;
-    justify-self: center;
-    margin: 3rem 0 6rem 0;
+    justify-content: center;
     
     font-size: 18px;
+    margin-top: 3rem;
     font-family: "Poppins-SemiBold";
 }
