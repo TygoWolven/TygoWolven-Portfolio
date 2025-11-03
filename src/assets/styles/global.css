@@ -41,6 +41,7 @@
     --radial-orange: radial-gradient(#FFF2ED, #F9C0A6);
     --radial-grey: radial-gradient(#FAFAFA, #8E8E8E);
     --radial-brown: radial-gradient(#CFC4B8, #837566);
+    --radial-blue: radial-gradient(var(--light-blue), var(--medium-blue));
 
     /* Font-sizes */
     --sticky-size: 16px;
@@ -71,32 +72,27 @@
 }
 
 /* Global Styling for specific elements */
-html {
-    scroll-behavior: smooth;
+body {
+    background: var(--white);
 
-    body {
-        background: var(--white);
-    
-        section {
-            margin: var(--section-width);
+    section {
+        margin: var(--section-width);
 
-            h1,
-            h2,
-            h3,
-            h4 {
-                font-weight: unset;
-            }
-            
-            h1,
-            h2 {
-                font-size: 96px;
-                font-weight: 900;
-                line-height: 100%;
-                text-transform: uppercase;
-                font-family: "Arges", Arial, Helvetica, sans-serif;
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: unset;
+        }
+        
+        h1,
+        h2 {
+            font-weight: 900;
+            line-height: 100%;
+            text-transform: uppercase;
+            font-size: clamp(96px, 12vw, 200px);
+            font-family: "Arges", Arial, Helvetica, sans-serif;
 
-                font-size: clamp(96px, 12vw, 200px);
-            }
         }
     }
 }

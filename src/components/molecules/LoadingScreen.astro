@@ -1,0 +1,56 @@
+<div class="loading-screen"/>
+
+<style>
+	div.loading-screen {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		
+		top: 0;
+		z-index: 1;
+		position: fixed;
+		pointer-events: none;
+
+		width: 100%;
+		height: 100%;
+		background: var(--black);
+        
+        &::after {
+            font-weight: 900;
+            color: var(--white);
+            font-size: clamp(96px, 12vw, 200px);
+            font-family: "Arges", Arial, Helvetica, sans-serif;
+            
+            content: counter(my-counter);
+            counter-reset: my-counter var(--number);
+        }
+	}
+	
+	div.loading-screen.play-loader {
+		display: flex;
+		animation: shrink 0.5s forwards ease-out 3s;
+
+        &::after {
+            animation: count 2s ease-in-out forwards,
+                       fade 0.5s forwards ease-out 2.5s;
+        }
+	}
+
+	@keyframes shrink {
+		to { height: 0; }
+	}
+
+	@keyframes count {
+		to { --number: 100; }
+	}
+
+	@keyframes fade {
+		to { opacity: 0; }
+	}
+
+	@property --number {
+  		syntax: '<integer>';
+  		inherits: true;
+  		initial-value: 0;
+	}
+</style>
