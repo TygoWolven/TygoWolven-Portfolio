@@ -3,6 +3,7 @@
 import "../assets/styles/global.css";
 
 // Import Layout Components
+import Header from "../components/organisms/Header.astro";
 import Footer from "../components/organisms/Footer.astro";
 ---
 
@@ -12,12 +13,20 @@ import Footer from "../components/organisms/Footer.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/images/Website-Icon.png" />
-		<script src="../assets/scripts/script.js"></script>
+
+		<link rel="preload" href="../assets/scripts/preloader.js" as="script">
+
+		
 		<meta name="generator" content={Astro.generator} />
 		<title>Tygo Wolven | Creative Front-end Designer & Developer</title>
 	</head>
 	<body>
+		<Header />
+
 		<slot />
+
 		<Footer />
+
+		<script src="../assets/scripts/script.js"></script>
 	</body>
 </html>
