@@ -1,0 +1,58 @@
+<span class="counter">0</span>
+
+<div class="overlay">
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+    <div class="bar"/>
+</div>
+
+<style>
+    .counter {
+        top: 0;
+        z-index: 2;
+        display: none;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+        height: 100%;
+        font-weight: 900;
+        color: var(--white);
+        pointer-events: none;
+        font-size: clamp(96px, 12vw, 200px);
+        font-family: "Arges", Arial, Helvetica, sans-serif;
+    }
+
+    .overlay {
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: fixed;
+        pointer-events: none;
+
+        .bar {
+            width: 10vw;
+            height: 100%;
+            background: var(--black);
+
+            @media (max-width: 768px) {
+                width: 20vw;
+    
+                &:nth-of-type(5) ~ .bar {
+                    display: none;
+                }
+            }
+        }
+
+    }
+</style>

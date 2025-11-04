@@ -1,7 +1,7 @@
 ---
 // Import the main-layout
 import Layout from '../layouts/Layout.astro';
-import LoadingScreen from '../components/molecules/LoadingScreen.astro';
+import Preloader from '../components/molecules/Preloader.astro';
 
 // Import all the layout-components
 import Home from '../components/organisms/Home.astro';
@@ -12,7 +12,7 @@ import Stats from '../components/organisms/Stats.astro';
 ---
 
 <Layout>
-	<LoadingScreen />
+	<Preloader />
 
 	<main>
 		<Home />

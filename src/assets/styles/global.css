@@ -72,27 +72,31 @@
 }
 
 /* Global Styling for specific elements */
-body {
-    background: var(--white);
+html {
+    scroll-behavior: smooth;
 
-    section {
-        margin: var(--section-width);
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-weight: unset;
-        }
-        
-        h1,
-        h2 {
-            font-weight: 900;
-            line-height: 100%;
-            text-transform: uppercase;
-            font-size: clamp(96px, 12vw, 200px);
-            font-family: "Arges", Arial, Helvetica, sans-serif;
-
+    body {
+        background: var(--white);
+    
+        section {
+            margin: var(--section-width);
+    
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-weight: unset;
+            }
+            
+            h1,
+            h2 {
+                font-weight: 900;
+                line-height: 100%;
+                text-transform: uppercase;
+                font-size: clamp(96px, 12vw, 200px);
+                font-family: "Arges", Arial, Helvetica, sans-serif;
+    
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
-<section>
+<section id="about">
     <h2>What do I do?</h2>
 	<div class="sticky-container">
-		<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven">
+		<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven" fetchpriority="high">
 	</div>
 	<p class="big-text">
 		My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
@@ -10,13 +10,16 @@
 </section>
 
 <style>
-    section {
+    section#about {
+		scroll-margin: var(--section-width);
+		
 		gap: 1rem 0;
 		display: grid;
 		grid-template-areas: 
 		"title"
 		"sticky-container"
 		"paragraph";
+		
 		
 		@media (min-width: 768px) {
 			gap: 0 4rem;
