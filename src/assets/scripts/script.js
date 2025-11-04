@@ -1,4 +1,5 @@
 import Lenis from "lenis";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,7 @@ const originalTitle = document.title;
 
 document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
-        document.title = "Pleasure meeting ya!";
+        document.title = "You better come back!";
     } else {
         document.title = originalTitle;
     }

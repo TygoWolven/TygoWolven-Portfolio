@@ -43,15 +43,14 @@
     --radial-brown: radial-gradient(#CFC4B8, #837566);
     --radial-blue: radial-gradient(var(--light-blue), var(--medium-blue));
 
-    /* Font-sizes */
-    --sticky-size: 16px;
-
     /* Margins & Paddings */
     --section-width: 6rem 1rem;
+    --navigation-width: 2rem 1rem;
 
     @media (min-width: 768px) {
         /* Margins & Paddings */
         --section-width: 9rem 6rem;
+        --navigation-width: 2rem 6rem;
     }
 }
 
@@ -102,6 +101,14 @@ html {
 }
 
 /* Reusable Classes */
+.small-caps {
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.04rem;
+    text-transform: uppercase;
+    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+}
+
 .medium-text {
     line-height: 100%;
     letter-spacing: -0.04rem;
