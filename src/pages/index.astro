@@ -8,13 +8,19 @@ import Home from '../components/organisms/Home.astro';
 import About from '../components/organisms/About.astro';
 import Work from '../components/organisms/Work.astro';
 import Services from '../components/organisms/Services.astro';
+import Slider from '../components/molecules/Slider.astro';
 import Stats from '../components/organisms/Stats.astro';
 ---
 
 <Layout>
-	<Preloader />
-
 	<main>
+		<!-- 
+			I put the Preloader in the main, because that's the first 
+			content that loads when entering the page, and I want the
+			user to see the preloader first.
+		-->
+		<Preloader />
+
 		<Home />
 
 		<About />
@@ -22,6 +28,8 @@ import Stats from '../components/organisms/Stats.astro';
 		<Work />
 
 		<Services />
+
+		<!-- <Slider /> -->
 
 		<Stats />
 	</main>

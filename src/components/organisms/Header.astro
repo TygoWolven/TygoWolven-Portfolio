@@ -1,12 +1,17 @@
 <header>
     <nav>
-        <a href="/" class="small-caps">Home</a>
         <ul>
             <li>
-                <a href="/work" class="small-caps">Work</a>
+                <a href="#home" class="small-caps">Home</a>
             </li>
             <li>
-                <a href="/contact" class="small-caps">Contact</a>
+                <a href="#about" class="small-caps">About</a>
+            </li>
+            <li>
+                <a href="#work" class="small-caps">Work</a>
+            </li>
+            <li>
+                <a href="#contact" class="small-caps">Contact</a>
             </li>
         </ul>
     </nav>
@@ -14,16 +19,41 @@
 
 <style>
     header {
-        margin: var(--navigation-width);
+        top: 0;
+        z-index: 1;
+        position: sticky;
+        padding: var(--navigation-width);
+        mix-blend-mode: difference;
         
         nav{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
             ul {
-                gap: 4rem;
                 display: flex;
+                justify-content: space-between;
+
+                a {
+                    --bracket-gap: 4px;
+
+                    /* Preventing the text from becoming thicker because of the mix-blend-mode. */
+                    background: white;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    &::before {
+                        content: "[";
+                        transition: 0.2s ease;
+                        margin-right: var(--bracket-gap);
+                    }
+                    
+                    &::after {
+                        content: "]";
+                        transition: 0.2s ease;
+                        margin-left: var(--bracket-gap);
+                    }
+
+                    &:hover {
+                        --bracket-gap: 10px;
+                    }
+                }
             }
         }
     }

@@ -1,12 +1,12 @@
 ---
 // Dynamic Content
-const { link, target, label } = Astro.props;
+const { link, target, label, color } = Astro.props;
 
 // Import all the layout-components
 import Chevron from "./Chevron.astro"
 ---
 
-<a href={ link } target={ target }>{ label } <Chevron color="var(--black)"/></a>
+<a href={ link } target={ target }>{ label } <Chevron color={ color }/></a>
 
 <style>
     a {

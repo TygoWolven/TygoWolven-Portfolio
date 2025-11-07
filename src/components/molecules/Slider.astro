@@ -1,0 +1,44 @@
+<ul>
+    <li>
+        Fun stats
+    </li>
+    <li>
+        Fun stats
+    </li>
+    <li>
+        Fun stats
+    </li>
+</ul>
+
+<style>
+    ul {
+        gap: 6rem;
+        display: flex;
+        padding: 1rem 0;
+        background: var(--light-blue);
+
+        li {
+            font-size: 20px;
+            font-weight: 900;
+            position: relative;
+            text-transform: uppercase;
+            
+            display: flex;
+            align-items: center;
+            color: var(--white);
+
+            &::after {
+                content: "";
+                position: absolute;
+
+                width: 12px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+
+                right: -3rem;
+                background: var(--white);
+                transform: translateX(50%);
+            }
+        }
+    }
+</style>

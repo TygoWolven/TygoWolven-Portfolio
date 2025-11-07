@@ -79,6 +79,7 @@ html {
     
         section {
             margin: var(--section-width);
+            scroll-margin: var(--section-width);
     
             h1,
             h2,
@@ -89,12 +90,14 @@ html {
             
             h1,
             h2 {
+                line-height: 1;
                 font-weight: 900;
-                line-height: 100%;
                 text-transform: uppercase;
-                font-size: clamp(96px, 12vw, 200px);
+                font-size: clamp(128px, 16vw, 300px);
                 font-family: "Arges", Arial, Helvetica, sans-serif;
-    
+            }
+            h2 {
+                font-size: clamp(96px, 12vw, 200px);
             }
         }
     }
@@ -102,11 +105,15 @@ html {
 
 /* Reusable Classes */
 .small-caps {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 100%;
     letter-spacing: -0.04rem;
     text-transform: uppercase;
     font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    
+    @media (min-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 .medium-text {
@@ -148,4 +155,18 @@ ul.hover-list {
     &:has(li:hover) li:hover {
         opacity: 1;
     }
+}
+
+.button {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: 0.2s ease;
+    
+    color: var(--white);
+    background: var(--grey400);
+    border: 1px solid var(--grey300);
+    
+    height: fit-content;
+    text-transform: uppercase;
+    font-family: "Doto", Arial, Helvetica, sans-serif;
 }
