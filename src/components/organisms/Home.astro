@@ -1,14 +1,78 @@
 <section id="home">
-    <h1>Creative Front-ender</h1>
+    <ul>
+        <li>
+            <p>Status <span>Looking for work</span></p>
+        </li>
+        <li>
+            <p>Expertise <span>Frontend Design & Development</span></p>
+        </li>
+        <li>
+            <p>Based in <span>Amsterdam, the Netherlands</span></p>
+        </li>
+        <li>
+            <a href="#contact">Contact me</a>
+        </li>
+    </ul>
 </section>
 
 <style>
     section#home {
-        h1 {
-            max-width: 11ch;
+        top: 0;
+        z-index: -1;
+        position: sticky;
 
-            span {
-                text-transform: initial;
+        margin: 0;
+        height: 100vh;
+        padding: var(--section-width);
+        background: var(--radial-blue);
+
+        padding-top: 1rem;
+
+        @media (min-width: 842px) {
+            padding-top: 2rem;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            li {
+                p,
+                span {
+                    color: var(--white);
+                }
+
+                p {
+                    display: flex;
+                    font-size: 18px;
+                    flex-direction: column;
+                    
+                    span {
+                        opacity: 0.6;
+                        font-size: inherit;
+                    }
+                }
+
+                a {
+                    font-weight: 900;
+                    padding: 1rem 2rem;
+                    border-radius: 2rem;
+                    color: var(--black);
+                    background: var(--white);
+                }
+            }
+
+            @media (max-width: 1280px) {
+                li:nth-of-type(3) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 842px) {
+                li:nth-of-type(2) {
+                    display: none;
+                }
             }
         }
     }

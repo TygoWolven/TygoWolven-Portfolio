@@ -45,9 +45,9 @@
 
     /* Margins & Paddings */
     --section-width: 6rem 1rem;
-    --navigation-width: 2rem 1rem;
+    --navigation-width: 1rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 842px) {
         /* Margins & Paddings */
         --section-width: 9rem 6rem;
         --navigation-width: 2rem 6rem;
@@ -76,9 +76,10 @@ html {
 
     body {
         background: var(--white);
-    
+
         section {
-            margin: var(--section-width);
+            background: var(--white);
+            padding: var(--section-width);
             scroll-margin: var(--section-width);
     
             h1,
@@ -93,7 +94,7 @@ html {
                 line-height: 1;
                 font-weight: 900;
                 text-transform: uppercase;
-                font-size: clamp(128px, 16vw, 300px);
+                font-size: clamp(96px, 16vw, 300px);
                 font-family: "Arges", Arial, Helvetica, sans-serif;
             }
             h2 {
