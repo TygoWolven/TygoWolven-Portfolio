@@ -43,6 +43,30 @@ import Chevron from '../components/atoms/Chevron.astro';
 		<section id="preview">
 			<img src="/images/Macbook-Fresk-Digital.png" alt="Laptop Preview">
 		</section>
+
+		<section id="features">
+			<article>
+				<!-- Icon? -->
+				<h3>Login</h3>
+				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+			</article>
+			<article>
+				<!-- Icon? -->
+				<h3>Dynamic Data</h3>
+				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+			</article>
+			<article>
+				<!-- Icon? -->
+				<h3>Chart.js</h3>
+				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+			</article>
+			<article>
+				<!-- Icon? -->
+				<h3>View-transitions</h3>
+				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+			</article>
+			<img src="/images/Iphone-Fresk-Digital.png" alt="Mobile Preview">
+		</section>
 		
 		<section id="challenge">
 			<p class="big-text">
@@ -117,6 +141,33 @@ import Chevron from '../components/atoms/Chevron.astro';
 		img {
 			width: calc(100% - 2rem);
 			max-width: 844px;
+		}
+	}
+
+	#features {
+		display: grid;
+		grid-template-columns: 2fr 1fr 2fr;
+		grid-template-rows: 1fr 1fr;
+
+		article {
+			align-self: center;
+			justify-self: center;
+
+			h3 {
+				font-size: 18px;
+				font-weight: 900;
+				margin-bottom: 8px;
+			}
+
+			p {
+				max-width: 48ch;
+			}
+		}
+
+		img {
+			grid-row: 1/3;
+			grid-column: 2/3;
+			max-height: 80vh;
 		}
 	}
 </style>

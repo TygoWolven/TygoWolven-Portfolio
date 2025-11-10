@@ -112,7 +112,7 @@ html {
     text-transform: uppercase;
     font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
     
-    @media (min-width: 768px) {
+    @media (min-width: 842px) {
         font-size: 16px;
     }
 }
@@ -120,13 +120,17 @@ html {
 .medium-text {
     line-height: 100%;
     letter-spacing: -0.04rem;
-	font-size: clamp(20px, 6vw, 32px);
+	font-size: clamp(20px, 5vw, 32px);
 }
 
 .big-text {
     line-height: 100%;
     letter-spacing: -0.04rem;
     font-size: clamp(24px, 6vw, 36px);
+}
+
+.big-title {
+    font-size: clamp(36px, 6vw, 128px);
 }
 
 ul.tags {

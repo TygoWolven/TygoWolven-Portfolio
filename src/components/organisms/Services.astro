@@ -1,49 +1,68 @@
 <section id="services">
-	<h2>Services</h2>
+	<h2 class="small-caps">What do I offer?</h2>
+	<p class="big-text">
+		I believe that we can live in a world where <span>every product</span> or service has an 
+		easy to use experience on all platforms. And my mission is to <span>make it happen.</span>
+	</p>
 	<ul class="sticky-list">
 		<li>
-			<h3 class="small-caps">Design</h3>
-			<p class="big-text">
-				Every project starts with understanding the goal and the user. I create wireframes 
-				and visual concepts — creating a strong foundation that will fit your needs.
-			</p>
-			<ul class="tags">
-				<li>Figma</li>
-				<li>Research</li>
-				<li>Wireframing</li>
-				<li>UI</li>
-				<li>UX</li>
-				<li>Web Design</li>
-				<li>Prototyping</li>
-			</ul>
+			<div class="title-wrapper">
+				<span aria-hidden="true">/01</span>
+				<h3 class="big-title">Design</h3>
+			</div>
+			<div class="content-wrapper">
+				<p class="medium-text">
+					Every project starts with understanding the goal and the user. I create wireframes 
+					and visual concepts — creating a strong foundation that will fit your needs.
+				</p>
+				<ul class="tags">
+					<li>Figma</li>
+					<li>Research</li>
+					<li>Wireframing</li>
+					<li>UI</li>
+					<li>UX</li>
+					<li>Web Design</li>
+					<li>Prototyping</li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<h3 class="small-caps">Development</h3>
-			<p class="big-text">
-				I turn the design into a fully functioning website using clean, structured code 
-				— focusing on responsiveness, performance, accessibility and progressive enhancements.
-			</p>
-			<ul class="tags">
-				<li>Frontend</li>
-				<li>Web Standards</li>
-				<li>Frameworks</li>
-				<li>CMS</li>
-				<li>API</li>
-				<li>Databases</li>
-				<li>Conventions</li>
-			</ul>
+			<div class="title-wrapper">
+				<span aria-hidden="true">/02</span>
+				<h3 class="big-title">Development</h3>
+			</div>
+			<div class="content-wrapper">
+				<p class="medium-text">
+					I turn the design into a fully functioning website using clean, structured code 
+					— focusing on responsiveness, performance, accessibility and progressive enhancements.
+				</p>
+				<ul class="tags">
+					<li>Frontend</li>
+					<li>Web Standards</li>
+					<li>Frameworks</li>
+					<li>CMS</li>
+					<li>API</li>
+					<li>Databases</li>
+					<li>Conventions</li>
+				</ul>
+			</div>
 		</li>
 		<li>
-			<h3 class="small-caps">Detailing</h3>
-			<p class="big-text">
-				This is where I refine the details. I optimize the user-experience, test across devices, 
-				and continue polishing until everything looks and feels just right — visually and technically.
-			</p>
-			<ul class="tags">
-				<li>Refactoring</li>
-				<li>Animating</li>
-				<li>Optimizing</li>
-			</ul>
+			<div class="title-wrapper">
+				<span aria-hidden="true">/03</span>
+				<h3 class="big-title">Detailing</h3>
+			</div>
+			<div class="content-wrapper">
+				<p class="medium-text">
+					This is where I refine the details. I optimize the user-experience, test across devices, 
+					and continue polishing until everything looks and feels just right — visually and technically.
+				</p>
+				<ul class="tags">
+					<li>Refactoring</li>
+					<li>Animating</li>
+					<li>Optimizing</li>
+				</ul>
+			</div>
 		</li>
 	</ul>
 </section>
@@ -54,10 +73,21 @@
 		background: var(--black);
 		padding: var(--section-width);
 
-		h2 {
-			color: var(--white);
-			margin-bottom: 3rem;
-			text-box: trim-both cap alphabetic;
+		& > h2 {
+			color: var(--grey100);
+			transform: translateY(100%);
+
+			+ p {
+				text-indent: 10ch;
+				color: var(--white);
+				margin-bottom: 6rem;
+				font-size: clamp(24px, 3vw, 64px);
+
+				span {
+					font-size: inherit;
+					color: var(--light-blue);
+				}
+			}
 		}
 		
 		ul.sticky-list {
@@ -65,25 +95,77 @@
 			display: flex;
 			flex-direction: column;
 			
-			& > li {
-				top: 5.5rem;
+			& > li {			
+				/* Styling */
 				padding: 2rem 0;
-				position: sticky;
 				background: var(--black);
 				border-top: 1px solid var(--grey400);
 				
+				/* Grid Layout */
+				display: grid;
+				grid-template-columns: 1fr;
+
+				/* Stickyness */
+				top: 2rem;
+				position: sticky;
+
 				&:nth-of-type(2) {
-					top: 10.5rem;
+					top: 8rem;
 				}
-				
-				h3 {
-					color: var(--grey100);
+
+				/* Child Containers */
+				.title-wrapper {
+					gap: 2rem;
+					display: flex;
+					margin-bottom: 2rem;
+					align-items: center;
+
+					span {
+						font-weight: 900;
+						color: var(--grey200);
+					}
+
+					h3 {
+						line-height: 90%;
+						color: var(--white);
+					}
 				}
-				
+
+				.content-wrapper {
+					p {
+						color: var(--grey100);
+						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+		@media (min-width: 842px) {
+			& > h2 {
+				transform: translateY(200%);
+
 				p {
-					max-width: 48ch;
-					color: var(--white);
-					margin: 2rem 0 1.5rem 0;
+					margin-bottom: 9rem;
+				}
+			}
+
+			ul.sticky-list {
+				& > li {
+					grid-template-columns: 2fr 1fr;
+
+					.title-wrapper {
+						gap: 4rem;
+						align-items: start;
+
+						span {
+							font-size: 24px;
+						}
+					}
+
+					.content-wrapper {
+						p {
+							max-width: 48ch;
+						}
+					}
 				}
 			}
 		}
