@@ -1,15 +1,11 @@
 ---
 // Import Layout
 import Layout from '../layouts/Layout.astro';
-
-// Import Components
-import Chevron from '../components/atoms/Chevron.astro';
 ---
 
 <Layout>
 	<main>
 		<section id="information">
-			<a href="/work"><Chevron color="var(--black)"/> Return</a>
 			<h1>Fresk Digital</h1>
 			<ul class="tags">
 				<li>Node</li>
@@ -31,7 +27,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 					<p class="medium-text">Design & Development</p>
 				</article>
 			</div>
-			<p class="big-text">
+			<p class="medium-text">
 				In the first year of my study, I designed and developed a data-driven dashboard that visualizes 
 				Google Analytics, Linkedin Analytics and Hotjar Analytics of a company called Fresk Digital. 
 
@@ -69,7 +65,7 @@ import Chevron from '../components/atoms/Chevron.astro';
 		</section>
 		
 		<section id="challenge">
-			<p class="big-text">
+			<p class="medium-text">
 				Each project was given me a unique challenge. In this project it was working with interactive 
 				charts and view-transitions. With API-Keys I managed to render some data of the Google Analytics. 
 			</p>
@@ -79,18 +75,6 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 <style>
 	#information {
-		a {
-			display: flex;
-			align-items: center;
-
-			font-size: 18px;
-			font-family: "Poppins-SemiBold";
-
-			svg {
-				transform: rotate(180deg);
-			}
-		}
-		
 		img {
 			width: 100%;
 			margin: 4rem 0;
@@ -155,7 +139,6 @@ import Chevron from '../components/atoms/Chevron.astro';
 
 			h3 {
 				font-size: 18px;
-				font-weight: 900;
 				margin-bottom: 8px;
 			}
 
