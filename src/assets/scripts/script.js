@@ -37,3 +37,23 @@ gsap.ticker.add((time) => {
 
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
+
+
+
+const animatedText = document.querySelector('.animated-text'),
+      originalText = animatedText.textContent.trim();
+  
+// Duplicate the text for a seamless loop
+animatedText.innerHTML = `${originalText} - ${originalText}`;
+
+// Apply GSAP ScrollTrigger animation
+gsap.to(animatedText, {
+  scrollTrigger: {
+    trigger: animatedText, // Animate when this element is in view
+    start: "top bottom", // Start when the element is just entering the viewport
+    end: "bottom top", // End when the element leaves the viewport
+    scrub: true, // Smoothly scrub the animation with the scroll
+  },
+  x: "-50%", // Move the text to the left
+  ease: "none", // Keep a constant speed
+});

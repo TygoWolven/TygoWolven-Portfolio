@@ -1,7 +1,7 @@
 <section id="about">
     <h2 class="small-caps">What do I do?</h2>
 	<div class="sticky-container">
-		<img src="/images/Tygo-Wolven-Portrait-Blue.png" alt="Portrait of Tygo Wolven" fetchpriority="high">
+		<img src="/images/Tygo-Wolven-Portrait-Standard.png" alt="Portrait of Tygo Wolven" fetchpriority="high">
 	</div>
 	<p class="big-text">
 		My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
@@ -46,9 +46,12 @@
 			aspect-ratio: 16/9;
 			border-radius: 1rem;
 			object-fit: contain;
-			background: var(--radial-blue);
+			background: radial-gradient(
+				at 50% 100%,
+				var(--white),
+				#D5D5D5
+			);
 		}
-		
 
 		p {
 			grid-area: paragraph;

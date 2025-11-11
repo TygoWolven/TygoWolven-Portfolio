@@ -78,8 +78,7 @@ html {
         background: var(--white);
 
         section {
-            background: var(--white);
-            padding: var(--section-width);
+            margin: var(--section-width);
             scroll-margin: var(--section-width);
     
             h1,

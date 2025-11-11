@@ -13,19 +13,21 @@
             <a href="#contact">Contact me</a>
         </li>
     </ul>
+    <h1 class="animated-text">Tygo Wolven</h1>
 </section>
 
 <style>
     section#home {
-        top: 0;
-        z-index: -1;
-        position: sticky;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         margin: 0;
         height: 100vh;
         padding: var(--section-width);
         background: var(--radial-blue);
 
+        padding-bottom: 0;
         padding-top: 1rem;
 
         @media (min-width: 842px) {
@@ -74,6 +76,16 @@
                     display: none;
                 }
             }
+        }
+
+        h1 {
+            margin-bottom: 6rem;
+            color: var(--white);
+            font-weight: unset;
+            white-space: nowrap;
+            text-transform: initial;
+            font-size: clamp(128px, 16vw, 196px);
+            font-family: "Poppins-Regular", Arial, Helvetica, sans-serif;
         }
     }
 </style>
