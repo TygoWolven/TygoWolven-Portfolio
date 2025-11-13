@@ -1,9 +1,6 @@
 <section id="about">
     <h2 class="small-title">What do I do?</h2>
-	<div class="sticky-container">
-		<img src="/images/Tygo-Wolven-Portrait-Standard.png" alt="Portrait of Tygo Wolven" fetchpriority="high">
-	</div>
-	<p class="big-text">
+	<p class="animated-paragraph big-text">
 		My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
 		experiences. Every project is a new oppurtunity to make the web a better place for everyone.
 	</p>
@@ -11,47 +8,13 @@
 
 <style>
     section#about {		
-		background: var(--white);
-		gap: 1rem 0;
-		display: grid;
-		grid-template-areas: 
-		"title"
-		"sticky-container"
-		"paragraph";
-		
-		
-		@media (min-width: 842px) {
-			gap: 0 4rem;
-			grid-template-areas:
-			"title sticky-container"
-			"paragraph sticky-container";
-			grid-template-columns: 3fr 2fr;
-
-			div.sticky-container {
-				grid-area: sticky-container;	
-	
-				img {
-					top: 5.5rem;
-					position: sticky;
-				}
-			}
-		}
-
 		h2 {
-			grid-area: title;
-		}
-		
-		img {
-			width: 100%;
-			aspect-ratio: 16/9;
-			border-radius: 1rem;
-			object-fit: contain;
-			background: var(--radial-grey);
+			opacity: 0.6;
+			margin-bottom: 1rem;
 		}
 
-		p {
+		p.animated-paragraph {
 			font-weight: 600;
-			grid-area: paragraph;
 		}
     }
 </style>

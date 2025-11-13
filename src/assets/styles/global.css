@@ -126,6 +126,13 @@ html {
 
 .big-text {
     font-size: clamp(24px, 3vw, 64px);
+    
+    /* GSAP Animation */
+    @media (scripting: enabled) {
+        div {
+            font-size: clamp(24px, 3vw, 64px);
+        }
+    }
 }
 
 ul.tags {
