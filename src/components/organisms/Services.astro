@@ -1,8 +1,8 @@
 <section id="services">
-	<h2 class="small-title">What do I offer?</h2>
-	<p class="big-text">
-		I believe that we can live in a world where <span>every product</span> or service has an 
-		easy to use experience on all platforms. And my mission is to <span>make it happen.</span>
+    <h2 class="small-title">What do I offer?</h2>
+	<p class="animated-paragraph big-text">
+		I believe that we can live in a world where every product or service has an 
+		easy to use experience on all platforms. My mission is to make this happen.
 	</p>
 	<ul class="sticky-list">
 		<li>
@@ -69,17 +69,21 @@
 		padding: var(--section-width);
 
 		& > h2 {
+			opacity: 0.6;
+			color: var(--white);
 			margin-bottom: 1rem;
-			color: var(--grey100);
 
-			+ p {
+			+ p.animated-paragraph {
 				color: var(--white);
 				margin-bottom: 6rem;
+				font-weight: 600;
 
-				span {
-					font-size: inherit;
-					color: var(--light-blue);
-				}
+				/* GSAP Animation */
+    			@media (scripting: enabled) {
+    			    div {
+    			        color: var(--white);
+    			    }
+    			}
 			}
 		}
 		
@@ -128,15 +132,6 @@
 		}
 		/* Breakpoint */
 		@media (min-width: 842px) {
-			& > h2 {
-				transform: translateY(400%);
-
-				+ p {
-					text-indent: 10ch;
-					margin-bottom: 9rem;
-				}
-			}
-
 			ul.sticky-list {
 				& > li {
 					padding: 4rem 0;

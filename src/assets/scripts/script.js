@@ -1,37 +1,63 @@
-// Import Lenis
+// ------------------------------------------------------
+// Import Dependencies
+// ------------------------------------------------------
+
+// Lenis
 import Lenis from "lenis";
 
-// Import GSAP
+// GSAP
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(ScrollTrigger,SplitText);
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 
 
 
 
-// -=-=-=- LENIS SMOOTH SCROLLING -=-=-=- //
+// ------------------------------------------------------
+// LENIS — Smooth Scrolling Setup
+// ------------------------------------------------------
 
 const lenis = new Lenis();
 
-// Synchronize Lenis with GSAP"s ScrollTrigger Plugin
+// Sync Lenis with ScrollTrigger
 lenis.on("scroll", ScrollTrigger.update);
 
-// Add Lenis"s requestAnimationFrame (raf) method to GSAP"s ticker
-// This ensures Lenis"s smooth scroll animation updates on each GSAP tick
+// Run Lenis on GSAP’s ticker
 gsap.ticker.add((time) => {
-  	lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+	lenis.raf(time * 1000); // GSAP → seconds | Lenis → milliseconds
 });
 
-// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+// Disable lag smoothing (prevents scroll delay)
 gsap.ticker.lagSmoothing(0);
 
 
 
 
 
-// -=-=-=- HEADING ANIMATION ON SCROLL -=-=-=- //
+// ------------------------------------------------------
+// DOCUMENT TITLE — Swap When User Leaves Tab
+// ------------------------------------------------------
+
+const originalTitle = document.title;
+
+document.addEventListener("visibilitychange", () => {
+	if (document.hidden) {
+		document.title = "You better come back!";
+	} else {
+		document.title = originalTitle;
+	}
+});
+
+
+
+
+
+// ------------------------------------------------------
+// HEADING — Infinite Horizontal Scroll Animation
+// ------------------------------------------------------
 
 const animatedHeading = document.querySelector(".animated-heading"),
       originalHeading = animatedHeading.textContent.trim();
@@ -40,40 +66,13 @@ const animatedHeading = document.querySelector(".animated-heading"),
 animatedHeading.innerHTML = `${originalHeading} - ${originalHeading}`;
 
 gsap.to(animatedHeading, {
+	x: "-50%",
+	ease: "none", 
   	scrollTrigger: {
-  	  	trigger: animatedHeading, // Animate when "animatedHeading" is in view.
-  	  	start: "top bottom", // Top of element reaches bottom of screen.
-  	  	end: "bottom top", // Bottom of element reaches top of screen.
-  	  	scrub: true, // Smoothly scrub the animation with the scroll
-  	},
-  	x: "-50%",
-  	ease: "none", 
-});
-
-
-
-
-
-// -=-=-=- PARAGRAPH ANIMATION ON SCROLL -=-=-=- //
-
-const animatedParagraph = document.querySelector(".animated-paragraph");
-
-const splittedParagraph = new SplitText(animatedParagraph, {
-    type: "lines",
-	mask: "lines",
-});
-
-gsap.from(splittedParagraph.lines, {
-  	scrollTrigger: {
-  	  	trigger: animatedParagraph,
-  	  	start: "top 75%",
-  	  	toggleActions: "play none none reverse" // Play on enter, reverse on the way back.
-  	},
-  	yPercent: 150,
-  	duration: 1,
-  	ease: "power4.out",
-  	stagger: {
-  	  	each: 0.1
+  	  	trigger: animatedHeading, 
+  	  	start: "top bottom", 		// Top of viewport, bottom of element
+  	  	end: "bottom top", 			// Bottom of viewport, top of element
+  	  	scrub: true, 				// Link the animation to the scroll-timeline
   	},
 });
 
@@ -81,13 +80,50 @@ gsap.from(splittedParagraph.lines, {
 
 
 
-// -=-=-=- CHANGING DOCUMENT TITLE BASED ON USER PRESENCE -=-=-=- //
-const originalTitle = document.title;
+// ------------------------------------------------------
+// PARAGRAPH — Line-by-Line Reveal on Scroll
+// ------------------------------------------------------
 
-document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-        document.title = "You better come back!";
-    } else {
-        document.title = originalTitle;
-    }
+gsap.utils.toArray(".animated-paragraph").forEach((paragraph) => {
+	const splitted = new SplitText(paragraph, {
+		type: "lines",
+		mask: "lines",
+	});
+
+	gsap.from(splitted.lines, {
+		yPercent: 150,									// TranslateY with 150%
+		duration: 1,
+		ease: "power4.out",	
+		stagger: { each: 0.1 },							// Delay each line with 0.1s
+		scrollTrigger: {
+			trigger: paragraph,
+			start: "top 75%",
+			toggleActions: "play none none reverse",	// Play when scrolling, reverse when scrolling-back
+		},
+	});
+});
+
+
+
+
+
+// ------------------------------------------------------
+// WORK IMAGES — Parallax Scroll Effect
+// ------------------------------------------------------
+
+gsap.utils.toArray(".parallax-container img").forEach((image) => {
+	gsap.fromTo(
+		image,
+		{ y: "-20%" },
+		{
+			y: "20%",
+			ease: "none",
+			scrollTrigger: {
+				trigger: image,
+				start: "top bottom",	// Top of viewport, bottom of element
+				end: "bottom top",		// Bottom of viewport, top of element
+				scrub: 1,				// Link the animation to the scroll-timeline, but give it a 1s delay
+			},
+		}
+	);
 });
