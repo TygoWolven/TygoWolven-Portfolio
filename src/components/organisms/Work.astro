@@ -20,12 +20,21 @@
             </a>
         </li>
         <li>
-            <a href="/fresk-digital">
+            <a href="/business-news-radio">
                 <div class="parallax-container">
                     <img src="/images/BNR-Mockup.png" alt="">
                 </div>
                 <h3>Business News Radio</h3>
                 <p>Promotion landing-page for podcasts</p>
+            </a>
+        </li>
+        <li>
+            <a href="/learning-blog">
+                <div class="parallax-container">
+                    <img src="/images/Learning-Blog-Mockup.png" alt="">
+                </div>
+                <h3>Learning Blog</h3>
+                <p>Notebook for my classes</p>
             </a>
         </li>
     </ul>
@@ -36,7 +45,6 @@
         h2 {
             font-weight: unset;
             margin-bottom: 2rem;
-            letter-spacing: -0.5rem;
             
             @media (min-width: 842px) {
                 margin-bottom: 4rem;
@@ -62,7 +70,6 @@
                     }
 
                     h3, p {
-                        font-size: 18px;
                         font-weight: unset;
                     }
                     
@@ -122,6 +129,15 @@
                             aspect-ratio: 12/13;
                         }
                     }
+                    
+                    &:nth-of-type(4) {
+                        grid-column: 1/8;
+                        grid-row: 4;
+
+                        .parallax-container {
+                            aspect-ratio: 5/4;
+                        }
+                    }
                 }
             }
         }
@@ -138,6 +154,11 @@
                     
                     &:nth-of-type(3) {
                         grid-column: 7/11;
+                            margin-bottom: -33%;
+                    }
+
+                    &:nth-of-type(4) {
+                        grid-column: 1/6;
                     }
                 }
             }

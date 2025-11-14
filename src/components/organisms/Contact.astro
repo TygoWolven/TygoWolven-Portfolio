@@ -1,0 +1,34 @@
+<section id="contact">
+    <h2>Contact</h2>
+    <div>
+        <p class="animated-paragraph big-text">
+            Dream big. Message me, and let's build it together.
+        </p>
+        <a href="mailto:tygowolven@gmail.com" class="button dark">Send me an Email</a>
+    </div>
+</section>
+
+<style>
+    section#contact {
+        height: 100vh;  /* Regular viewport-height */
+        height: 100dvh; /* Dynamic viewport-height */
+        
+        margin: 0;
+        scroll-margin-top: 9rem;
+        padding: var(--section-width);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+            font-weight: unset;
+        }
+
+        p.animated-paragraph {
+            margin-bottom: 4rem;
+            font-weight: 600;
+            max-width: 22ch;
+        }
+    }
+</style>
