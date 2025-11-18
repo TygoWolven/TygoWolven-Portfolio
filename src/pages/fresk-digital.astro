@@ -5,32 +5,35 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<main>
-		<section id="information">
-			<h1>Fresk Digital</h1>
-			<ul class="tags">
-				<li>Node</li>
-				<li>Express</li>
-				<li>View-transitions</li>
-				<li>HTML</li>
-				<li>CSS</li>
-				<li>Javascript</li>
-				<li>Chart.js</li>
+		<section id="home">
+			<ul class="navigation">
+				<li>
+					<a href="/">Return to <span>Homepage</span></a>
+				</li>
+				<li>
+					<a href="/#contact" class="button dark">Contact me</a>
+				</li>
 			</ul>
+
+    		<h1 class="big-title">Fresk Digital</h1>
+
 			<img src="/images/Fresk-Digital.png" alt="Desktop Preview">
-			<div>
-				<article>
-					<h2 class="medium-text">Product-type</h2>
-					<p class="medium-text">Private Dashboard</p>
-				</article>
-				<article>
-					<h2 class="medium-text">Service</h2>
-					<p class="medium-text">Design & Development</p>
-				</article>
-			</div>
-			<p class="medium-text">
+
+			<ul class="information">
+				<li>
+					<p class="s-text">Product-type <span>Company Dashboard</span></p>
+				</li>
+				<li>
+					<p class="s-text">Services <span>Design & Development</span></p>
+				</li>
+			</ul>
+
+			<p class="animated-text m-text">
 				In the first year of my study, I designed and developed a data-driven dashboard that visualizes 
 				Google Analytics, Linkedin Analytics and Hotjar Analytics of a company called Fresk Digital. 
 
+				<br><br>
+	
 				With the short ammount of time I had, I focused on the Google Analytics only, combined with some 
 				view-transitions to expand my knowledge about the compact funcitonalities.
 			</p>
@@ -42,30 +45,27 @@ import Layout from '../layouts/Layout.astro';
 
 		<section id="features">
 			<article>
-				<!-- Icon? -->
-				<h3>Login</h3>
-				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+				<h3 class="small-title">Login</h3>
+				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
 			</article>
 			<article>
-				<!-- Icon? -->
-				<h3>Dynamic Data</h3>
-				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+				<h3 class="small-title">Dynamic Data</h3>
+				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
 			</article>
 			<article>
-				<!-- Icon? -->
-				<h3>Chart.js</h3>
-				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+				<h3 class="small-title">Chart.js</h3>
+				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
 			</article>
 			<article>
-				<!-- Icon? -->
-				<h3>View-transitions</h3>
-				<p>Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
+				<h3 class="small-title">View-transitions</h3>
+				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
 			</article>
+			
 			<img src="/images/Iphone-Fresk-Digital.png" alt="Mobile Preview">
 		</section>
 		
 		<section id="challenge">
-			<p class="medium-text">
+			<p class="animated-text m-text">
 				Each project was given me a unique challenge. In this project it was working with interactive 
 				charts and view-transitions. With API-Keys I managed to render some data of the Google Analytics. 
 			</p>
@@ -74,46 +74,58 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-	#information {
+	p.m-text {
+		max-width: 48ch;
+	}
+
+	section#home {
+		margin-top: 1rem;
+
+		@media (min-width: 842px) {
+			margin-top: 2rem;
+		}
+
+		h1 {
+			margin-top: 9rem;
+		}
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+
+			li {
+				a, p {
+					display: flex;
+					flex-direction: column;
+
+					span {
+						opacity: 0.6;
+						font-size: inherit;
+					} 	
+				}
+			}
+
+			&.information {
+				gap: 2rem;
+				flex-direction: column;
+
+				@media (min-width: 842px) {
+					flex-direction: row;
+				}
+			}
+		}
+
 		img {
 			width: 100%;
 			margin: 4rem 0;
-			padding: 5% 10%;
-			background: var(--radial-purple);
 		}
 
-		div {
-			gap: 3rem;
-			display: flex;
-			flex-direction: column;
-			
-			@media (min-width: 842px) {
-				flex-direction: row;
-				justify-content: space-between;
-			}
-
-			article {
-				gap: 1rem;
-				display: flex;
-				flex-direction: column;
-	
-				h2 {
-					text-transform: initial;
-					font-family: "Poppins-Regular", Arial, Helvetica, sans-serif;
-				}
-	
-				p {
-					opacity: 0.6;
-				}
-			}
-		}
-
-		& > p {
-			margin-top: 6rem;
+		p.m-text {
+			margin-top: 9rem;
 		}
 	}
-	
-	#preview {
+
+	section#preview {
 		margin: 0;
 		height: 100vh;
 		background: var(--black);
@@ -128,28 +140,45 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
-	#features {
+	section#features {
 		display: grid;
-		grid-template-columns: 2fr 1fr 2fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr;
 
 		article {
 			align-self: center;
-			justify-self: center;
+			justify-self: start;
+			margin-bottom: 2rem;
 
 			h3 {
 				margin-bottom: 8px;
-			}
 
-			p {
-				max-width: 48ch;
+				+ p {
+					opacity: 0.6;
+					max-width: 32ch;
+				}
 			}
 		}
 
 		img {
-			grid-row: 1/3;
-			grid-column: 2/3;
-			max-height: 80vh;
+			max-width: 100%;
+		}
+
+		/* Breakpoint */
+		@media (min-width: 1024px) {
+			grid-template-rows: 1fr 1fr;
+			grid-template-columns: 2fr 1fr 2fr;
+
+			article {
+				&:nth-of-type(2n) {
+					justify-self: end;
+				}
+			}
+
+			img {
+				max-height: 80vh;
+				grid-row: 1/3;
+				grid-column: 2/3;
+			}
 		}
 	}
 </style>

@@ -2,15 +2,15 @@
 // Import Dependencies
 // ------------------------------------------------------
 
-// Lenis
+// Lenis Smooth Scrolling
 import Lenis from "lenis";
 
-// GSAP
+// GSAP Animation
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 
 
@@ -81,11 +81,11 @@ gsap.to(animatedHeading, {
 
 
 // ------------------------------------------------------
-// PARAGRAPH — Line-by-Line Reveal on Scroll
+// TEXT — Line-by-Line Reveal on Scroll
 // ------------------------------------------------------
 
-gsap.utils.toArray(".animated-paragraph").forEach((paragraph) => {
-	const splitted = new SplitText(paragraph, {
+gsap.utils.toArray(".animated-text").forEach((text) => {
+	const splitted = new SplitText(text, {
 		type: "lines",
 		mask: "lines",
 	});
@@ -96,9 +96,9 @@ gsap.utils.toArray(".animated-paragraph").forEach((paragraph) => {
 		ease: "power4.out",	
 		stagger: { each: 0.1 },							// Delay each line with 0.1s
 		scrollTrigger: {
-			trigger: paragraph,
+			trigger: text,
 			start: "top 75%",
-			toggleActions: "play none none reverse",	// Play when scrolling, reverse when scrolling-back
+			toggleActions: "play none none reverse",
 		},
 	});
 });
@@ -114,7 +114,9 @@ gsap.utils.toArray(".animated-paragraph").forEach((paragraph) => {
 gsap.utils.toArray(".parallax-container img").forEach((image) => {
 	gsap.fromTo(
 		image,
-		{ y: "-20%" },
+		{ 
+			y: "-20%" 
+		},
 		{
 			y: "20%",
 			ease: "none",
@@ -124,6 +126,33 @@ gsap.utils.toArray(".parallax-container img").forEach((image) => {
 				end: "bottom top",		// Bottom of viewport, top of element
 				scrub: 1,				// Link the animation to the scroll-timeline, but give it a 1s delay
 			},
-		}
+		},
+	);
+});
+
+
+
+
+
+// ------------------------------------------------------
+// SERVICES — Opacity Show Effect
+// ------------------------------------------------------
+
+gsap.utils.toArray("#services ul li").forEach(item => {
+	gsap.fromTo(
+		item, 
+		{ 
+			opacity: "0.1" 
+		},
+		{
+			opacity: "1",
+			ease: "none",
+			scrollTrigger: {
+				trigger: item,
+				start: "top 55%",
+				end: "bottom 45%",
+				toggleActions: "play reverse play reverse",
+			},
+		},
 	);
 });

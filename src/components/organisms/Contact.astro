@@ -1,20 +1,35 @@
 <section id="contact">
-    <h2>Contact</h2>
-    <div>
-        <p class="animated-paragraph big-text">
-            Dream big. Message me, and let's build it together.
-        </p>
-        <a href="mailto:tygowolven@gmail.com" class="button dark">Send me an Email</a>
-    </div>
+    <h2>Contact me</h2>
+    <!-- <div>
+        <form action="">
+            <label for="name">What's your name?</label>
+            <input type="text" id="name" placeholder="Full Name" />
+            
+            <label for="email">What's your email?</label>
+            <input type="text" id="email" placeholder="example@mail.com" />
+            
+            <label for="subject">What's your message?</label>
+            <textarea id="subject" placeholder="Tell me more about your project. Don't hestitate to include links if necessary." /> 
+    
+            <input type="submit" value="Send message" class="button dark">
+        </form>
+        <ul class="social-media">
+            <li>
+                <a href="https://github.com/TygoWolven" target="_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/tygo-wolven-091515241/" target="_blank">Linkedin</a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/tygowolvenn_/" target="_blank">Instagram</a>
+            </li>
+        </ul>
+    </div> -->
 </section>
 
 <style>
     section#contact {
-        height: 100vh;  /* Regular viewport-height */
-        height: 100dvh; /* Dynamic viewport-height */
-        
         margin: 0;
-        scroll-margin-top: 9rem;
         padding: var(--section-width);
 
         display: flex;
@@ -24,11 +39,65 @@
         h2 {
             font-weight: unset;
         }
-
-        p.animated-paragraph {
+        
+        p.animated-text {
             margin-bottom: 4rem;
             font-weight: 600;
             max-width: 22ch;
         }
+
+        div {
+            display: flex;
+            margin-top: 6rem;
+            justify-content: space-between;
+
+            form {
+                display: flex;
+                min-width: 50%;
+                flex-direction: column;
+    
+                input:not(.button), label, textarea {
+                    font-size: 24px;
+                    background: none;
+                    border: none;
+                }
+    
+                label {
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--grey100);
+                }
+                
+                textarea,
+                input:not(.button) {
+                    padding-bottom: 2rem;
+
+                    &::placeholder {
+                        opacity: 0.6;
+                        color: var(--black);
+                    }
+                }
+    
+                textarea {
+                    padding-bottom: 6rem;
+                    border-bottom: 1px solid var(--grey100);
+                }
+                
+                .button {
+                    margin-top: 2rem;
+                    width: fit-content;
+                }
+            }
+
+            ul.social-media {
+                &::before {
+                    content: "Social Media";
+                }
+
+                li {
+                    opacity: 0.6;
+                }
+            }
+        }
+
     }
 </style>

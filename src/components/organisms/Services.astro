@@ -1,63 +1,34 @@
 <section id="services">
-    <h2 class="small-title">What do I offer?</h2>
-	<p class="animated-paragraph big-text">
-		I believe that we can live in a world where every product or service has an 
-		easy to use experience on all platforms. My mission is to make this happen.
+    <h2 class="small-title">How can I assist you?</h2>
+	<p class="animated-text xl-text">
+		From concept to polished interface - explore the services 
+		I offer to translate your ideas into digital experiences.
 	</p>
-	<ul class="sticky-list">
+	<ul>
 		<li>
-			<span aria-hidden="true">01</span>
-			<h3 class="big-title">Design</h3>
-			<div class="content-wrapper">
-				<p class="medium-text">
-					Every project starts with understanding the goal and the user. I create wireframes 
-					and visual concepts — creating a strong foundation that will fit your needs.
-				</p>
-				<ul class="tags">
-					<li>Figma</li>
-					<li>Research</li>
-					<li>Wireframing</li>
-					<li>UI</li>
-					<li>UX</li>
-					<li>Web Design</li>
-					<li>Prototyping</li>
-				</ul>
-			</div>
+			<h3 class="l-text">Website Design</h3>
+			<p class="animated-text">
+				Understanding the project's goals and the people who will use it. Trough
+				wireframes, prototypes and refined visual designs, I create intuitive interfaces that
+				guide users naturally, ensuring every interaction feels clear, purposeful, and enjoyable.
+			</p>
 		</li>
 		<li>
-			<span aria-hidden="true">02</span>
-			<h3 class="big-title">Development</h3>
-			<div class="content-wrapper">
-				<p class="medium-text">
-					I turn the design into a fully functioning website using clean, structured code 
-					— focusing on responsiveness, performance, accessibility and progressive enhancements.
-				</p>
-				<ul class="tags">
-					<li>Frontend</li>
-					<li>Web Standards</li>
-					<li>Frameworks</li>
-					<li>CMS</li>
-					<li>API</li>
-					<li>Databases</li>
-					<li>Conventions</li>
-				</ul>
-			</div>
+			<h3 class="l-text">Frontend Development</h3>
+			<p class="animated-text">
+				Turning the ideas and designs into a fully functioning website using clean, scalable 
+				code. With a strong focus on the web-principles and methods, I deliver a smooth 
+				experience for every single user.
+			</p>
 		</li>
 		<li>
-			<span aria-hidden="true">03</span>
-			<h3 class="big-title">Finetuning</h3>
-			<div class="content-wrapper">
-				<p class="medium-text">
-					This is where I refine the details. I optimize the user-experience, test across devices, 
-					and continue polishing until everything looks and feels just right — visually and technically.
-				</p>
-				<ul class="tags">
-					<li>Refactoring</li>
-					<li>Animating</li>
-					<li>Optimizing</li>
-					<li>Detailing</li>
-				</ul>
-			</div>
+			<h3 class="l-text">Support & Maintenance</h3>
+			<p class="animated-text">
+				After launch, I fine-tune every detail that helps your website load faster, rank better, and 
+				deliver a seamless user experience. I also make sure the website is always up-to-date by handling
+				updates, bug fixes, and ongoing improvements. This will make sure you never have to worry about your
+				digital precense from dissapearing. 
+			</p>
 		</li>
 	</ul>
 </section>
@@ -68,84 +39,75 @@
 		background: var(--black);
 		padding: var(--section-width);
 
-		& > h2 {
+		h2 {
 			opacity: 0.6;
 			color: var(--white);
 			margin-bottom: 1rem;
 
-			+ p.animated-paragraph {
+			+ p.animated-text {
 				color: var(--white);
 				margin-bottom: 6rem;
 				font-weight: 600;
-
-				/* GSAP Animation */
-    			@media (scripting: enabled) {
-    			    div {
-    			        color: var(--white);
-    			    }
-    			}
 			}
 		}
 		
-		ul.sticky-list {
-			& > li {			
-				/* Styling */
-				padding: 2rem 0;
-				background: var(--black);
-				border-top: 1px solid var(--grey400);
-				
-				&:last-of-type {
-					border-bottom: 1px solid var(--grey400);
-				}
+		ul {
+			gap: 3rem 0;
+			display: grid;
+			grid-template-columns: 1fr;
 
-				/* Grid Layout */
-				display: grid;
-				grid-template-columns: 1fr;
-
-				/* Stickyness */
-				top: 2rem;
-				position: sticky;
-
-				&:nth-of-type(2) {
-					top: 8rem;
-				}
-
-				/* Child Elements */
-				span {
-					display: none;
-				}
-
+			li {
 				h3 {
-					font-weight: unset;
+					margin-bottom: 1rem;
 					color: var(--white);
 				}
 
-				.content-wrapper {
-					margin-top: 1rem;
-
-					p {
-						color: var(--grey100);
-						margin-bottom: 2rem;
-					}
+				p.animated-text {
+					opacity: 0.6;
+					color: var(--white);
 				}
 			}
 		}
-		/* Breakpoint */
-		@media (min-width: 842px) {
-			ul.sticky-list {
-				& > li {
-					padding: 4rem 0;
-					grid-template-columns: 1fr 4fr 2fr;
+	
+		/* GSAP Animations */
+		@media (scripting: enabled) {
+			p.animated-text {
+				div {
+					color: var(--white);
+				}
+			}
+			
+			ul {
+				li {
+					opacity: 0.1;
+				}
+			}
+		}
 
-					span {
-						display: flex;
-						font-weight: 900;
-						color: var(--grey200);
+		/* Breakpoint */
+		@media (min-width: 1024px) {
+			ul {
+				gap: 6rem 0;
+				grid-template-columns: repeat(3, 1fr);
+
+				li {
+					h3 {
+						max-width: 12ch;
 					}
 
-					.content-wrapper {
-						margin: unset;
-						grid-column: unset;
+					&:nth-of-type(1) {
+						grid-row: 1;
+						grid-column: 1;
+					}
+
+					&:nth-of-type(2) {
+						grid-row: 2;
+						grid-column: 2;
+					}
+
+					&:nth-of-type(3) {
+						grid-row: 3;
+						grid-column: 3;
 					}
 				}
 			}

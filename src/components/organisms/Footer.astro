@@ -1,46 +1,43 @@
+---
+// Import Components
+import Chevron from "../atoms/icons/Chevron.astro"
+---
+
 <footer>
-    <ul>
-        <li>
-            <a href="#home">Home</a>
-        </li>
-        <li>
-            <a href="#about">About</a>
-        </li>
-        <li>
-            <a href="#work">Work</a>
-        </li>
-        <li>
-            <a href="#services">Services</a>
-        </li>
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="/fresk-digital">Fresk Digital</a>
-        </li>
-        <li>
-            <a href="/de-hallen">De Hallen Amsterdam West</a>
-        </li>
-        <li>
-            <a href="/business-news-radio">Business News Radio</a>
-        </li>
-        <li>
-            <a href="/learning-blog">Learning Blog</a>
-        </li>
-    </ul>
-    <ul>
-        <li>
-            <a href="https://github.com/TygoWolven" target="_blank">Github</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/tygo-wolven-091515241/" target="_blank">Linkedin</a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/tygowolvenn_/" target="_blank">Instagram</a>
-        </li>
-    </ul>
+    <nav>
+        <ul class="navigation">
+            <li>
+                <a href="#home">Home</a>
+                <button>
+                    <Chevron color="var(--white)" />
+                </button>
+            </li>
+            <li>
+                <a href="#about">About</a>
+                <button>
+                    <Chevron color="var(--white)" />
+                </button>
+            </li>
+            <li>
+                <a href="#work">Work</a>
+                <button>
+                    <Chevron color="var(--white)" />
+                </button>
+            </li>
+            <li>
+                <a href="#services">Services</a>
+                <button>
+                    <Chevron color="var(--white)" />
+                </button>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+                <button>
+                    <Chevron color="var(--white)" />
+                </button>
+            </li>
+        </ul>
+    </nav>
 </footer>
 
 <style>
@@ -48,30 +45,80 @@
         background: var(--black);
         padding: var(--section-width);
 
-        display: flex;
-        justify-content: space-between;
-
-        & * {
-            color: var(--white);
-        }
-        
         ul {
             li {
-                transition: 0.4s ease;
-
                 a {
-                    &:hover {
-                        
-                    }
+                    color: var(--white);
                 }
             }
 
+            /* Hover Animation */
             &:has(li:hover) li {
-                opacity: 0.5;
+                opacity: 0.2;
             }
     
             &:has(li:hover) li:hover {
+                cursor: pointer;
                 opacity: 1;
+            }
+        }
+
+        nav {
+            ul.navigation {
+                gap: 4rem;
+                display: flex;
+                flex-direction: column;
+    
+                li {
+                    display: flex;
+                    align-items: end;
+                    transition: 0.4s ease;
+                    justify-content: space-between;
+    
+                    a {
+                        text-box: trim-both cap alphabetic;
+                        font-size: clamp(32px, 6vw, 96px);
+    
+                        &::after {
+                            content: "[01]";
+                            margin-left: 1rem;
+                            font-size: 18px;
+                            opacity: 0.6;
+                        }
+    
+                    }
+    
+                    button {
+                        display: flex;
+                        background: none;
+                        height: fit-content;
+                        
+                        padding: 0 2rem;
+                        border-radius: 2rem;
+                        border: 2px solid var(--white);
+                    }
+    
+                    &:nth-of-type(2) {
+                        a::after {
+                            content: "[02]";
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        a::after {
+                            content: "[03]";
+                        }
+                    }
+                    &:nth-of-type(4) {
+                        a::after {
+                            content: "[04]";
+                        }
+                    }
+                    &:nth-of-type(5) {
+                        a::after {
+                            content: "[05]";
+                        }
+                    }
+                }
             }
         }
     }

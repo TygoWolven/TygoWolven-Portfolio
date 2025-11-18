@@ -3,18 +3,25 @@
     font-family: "Arges";
     src: url("/fonts/Arges-VariableFont_wght.ttf");
 }
+
 @font-face {
     font-family: "Poppins-Regular";
     src: url("/fonts/Poppins-Regular.ttf");
 }
+
 @font-face {
     font-family: "Poppins-SemiBold";
     src: url("/fonts/Poppins-SemiBold.ttf");
 }
+
 @font-face {
     font-family: "Doto";
     src: url("/fonts/Doto-VariableFont_wght.ttf");
 }
+
+
+
+
 
 /* Custom Properties */
 :root {    
@@ -48,6 +55,10 @@
     }
 }
 
+
+
+
+
 /* Global Styling for all elements */
 * {
     margin: 0;
@@ -66,6 +77,10 @@
     }
 }
 
+
+
+
+
 /* Global Styling */
 html {
     scroll-behavior: smooth;
@@ -74,6 +89,7 @@ html {
         background: var(--white);
         
         section {
+            scroll-margin-top: 6rem;
             margin: var(--section-width);
             
             h1,
@@ -120,11 +136,45 @@ html {
     }
 }
 
-.medium-text {
-	font-size: clamp(20px, 2vw, 32px);
+
+
+
+
+/* Font Sizes */
+.s-text {
+	font-size: clamp(16px, 2vw, 24px);
+
+    /* GSAP Animation */
+    @media (scripting: enabled) {
+        div {
+	        font-size: clamp(16px, 2vw, 24px);
+        }
+    }
 }
 
-.big-text {
+.m-text {
+    font-size: clamp(18px, 2vw, 32px);
+
+    /* GSAP Animation */
+    @media (scripting: enabled) {
+        div {
+            font-size: clamp(18px, 2vw, 32px);
+        }
+    }
+}
+
+/* Font Sizes */
+.l-text {
+    font-size: clamp(24px, 3vw, 48px);
+    /* GSAP Animation */
+    @media (scripting: enabled) {
+        div {
+            font-size: clamp(24px, 3vw, 48px);        
+        }
+    }
+}				
+
+.xl-text {
     font-size: clamp(24px, 3vw, 64px);
     
     /* GSAP Animation */
@@ -135,12 +185,18 @@ html {
     }
 }
 
+
+
+
+
+/* Variable Classes */
 .button {
+    border: none;
     font-size: 16px;
     font-weight: 900;
     padding: 1rem 2rem;
     border-radius: 2rem;
-
+    
     &.light {
         color: var(--black);
         background: var(--white);
@@ -149,20 +205,5 @@ html {
     &.dark {
         color: var(--white);
         background: var(--black);
-    }
-}
-
-ul.tags {
-    gap: 4px;			
-    display: flex;
-    flex-wrap: wrap;
-
-    li {			
-        color: var(--white);
-        background: var(--grey300);
-        padding: 4px 8px;
-        border-radius: 4px;
-        text-transform: uppercase;
-        font-family: "Doto", Arial, Helvetica, sans-serif;
     }
 }

@@ -1,9 +1,25 @@
 <section id="about">
     <h2 class="small-title">What do I do?</h2>
-	<p class="animated-paragraph big-text">
-		My passion lies in bringing dreams to life by creating simple, intuitive and engaging digital 
-		experiences. Every project is a new oppurtunity to make the web a better place for everyone.
+	<p class="animated-text xl-text">
+		My passion lies in bringing dreams to life by designing and 
+		developing complex, user-friendly, interactive web-applications.
 	</p>
+
+	<div class="alignment-wrapper">
+		<h3 class="small-title">In doing so</h3>
+		<p class="animated-text">
+			I'm implementing core web principles, API's, databases, and use relevant 
+			tools and frameworks, and follow standard design and development methodologies.
+		</p>
+	
+		<h3 class="small-title">With the goal to</h3>
+		<p class="animated-text">
+			Make the web a better place for everyone. Taking care of responsiveness, accessibility, 
+			performance and progressive enhancements, my creations are useable for everyone.
+		</p>
+
+		<a href="#services" class="button dark">Find out how</a>
+	</div>
 </section>
 
 <style>
@@ -13,8 +29,28 @@
 			margin-bottom: 1rem;
 		}
 
-		p.animated-paragraph {
+		p.animated-text {
 			font-weight: 600;
+		}
+
+		div.alignment-wrapper {
+			margin-top: 3rem;
+			justify-self: end;
+
+			@media (min-width: 842px) {
+				margin-top: unset;
+			}
+
+			h3 {
+				margin-bottom: 0.5rem;
+	
+				& + p.animated-text {
+					opacity: 0.6;
+					max-width: 42ch;
+					font-weight: 100;
+					margin-bottom: 3rem;
+				}
+			}
 		}
     }
 </style>
