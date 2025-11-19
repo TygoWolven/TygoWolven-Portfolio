@@ -87,7 +87,7 @@ html {
     
     body {
         background: var(--white);
-        
+
         section {
             scroll-margin-top: 6rem;
             margin: var(--section-width);
@@ -97,26 +97,6 @@ html {
             h3,
             h4 {
                 line-height: 100%;
-                
-                &.small-title {
-                    font-size: 14px;
-                    text-transform: uppercase;
-                    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
-                    
-                    @media (min-width: 842px) {
-                        font-size: 16px;
-                    }
-                }
-
-                &.big-title {
-                    font-size: clamp(36px, 6vw, 128px);
-                }
-
-                &.variant-title {
-                    font-weight: 900;
-                    text-transform: uppercase;
-                    font-family: "Arges", Arial, Helvetica, sans-serif;
-                }
             }
 
             h1 {
@@ -141,6 +121,27 @@ html {
 
 
 /* Font Sizes */
+.small-title {
+    opacity: 0.6;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
+    
+    @media (min-width: 842px) {
+        font-size: 16px;
+    }
+}
+
+.big-title {
+    font-size: clamp(36px, 6vw, 128px);
+}
+
+.variant-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: "Arges", Arial, Helvetica, sans-serif;
+}
+
 .s-text {
 	font-size: clamp(16px, 2vw, 24px);
 
@@ -175,12 +176,12 @@ html {
 }				
 
 .xl-text {
-    font-size: clamp(24px, 3vw, 64px);
+    font-size: clamp(24px, 4vw, 64px);
     
     /* GSAP Animation */
     @media (scripting: enabled) {
         div {
-            font-size: clamp(24px, 3vw, 64px);
+            font-size: clamp(24px, 4vw, 64px);
         }
     }
 }
@@ -206,4 +207,4 @@ html {
         color: var(--white);
         background: var(--black);
     }
-}
+}   

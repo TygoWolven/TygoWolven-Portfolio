@@ -1,59 +1,29 @@
-<span class="counter">0</span>
-
-<div class="overlay">
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
-    <div class="bar"/>
+<div class="preloader">
+    <span class="heading small-title">Front-end Portfolio 2025</span>
+    <span class="content xl-text">Welcome to the portfolio of Tygo Wolven, enjoy!</span>
 </div>
 
 <style>
-    .counter {
-        top: 0;
-        z-index: 2;
+    div.preloader {
         display: none;
         position: fixed;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        
-        width: 100%;
-        height: 100%;
-        color: var(--white);
         pointer-events: none;
+        justify-content: center;
 
-        font-weight: 900;
-        font-size: clamp(96px, 12vw, 196px);
-        font-family: "Arges", Arial, Helvetica, sans-serif;
-    }
-
-    .overlay {
-        top: 0;
         z-index: 1;
         width: 100%;
         height: 100%;
-        display: none;
-        position: fixed;
-        pointer-events: none;
+        background: var(--black);
 
-        .bar {
-            width: 10vw;
-            height: 100%;
-            background: var(--black);
-
-            @media (max-width: 842px) {
-                width: 20vw;
-    
-                &:nth-of-type(5) ~ .bar {
-                    display: none;
-                }
+        span {
+            color: var(--white);
+            text-align: center;
+            
+            &.content {
+                max-width: 20ch;
             }
         }
-
     }
 </style>
