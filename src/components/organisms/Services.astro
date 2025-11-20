@@ -6,28 +6,38 @@
 	</p>
 	<ul>
 		<li>
-			<h3 class="l-text">Website Design</h3>
+			<h3 class="small-title">Website Design</h3>
 			<p class="animated-text">
-				Understanding the project's goals and the people who will use it. Trough
+				I start with understanding the project's goals and the people who will use it. Trough
 				wireframes, prototypes and refined visual designs, I create intuitive interfaces that
 				guide users naturally, ensuring every interaction feels clear, purposeful, and enjoyable.
 			</p>
 		</li>
+
 		<li>
-			<h3 class="l-text">Frontend Development</h3>
+			<h3 class="small-title">Frontend Development</h3>
 			<p class="animated-text">
-				Turning the ideas and designs into a fully functioning website using clean, scalable 
-				code. With a strong focus on the web-principles and methods, I deliver a smooth 
-				experience for every single user.
+				I bring the designs to life with modern, scalable, and maintainable code. By following solid
+				web principles and best practices, I build fast, reliable, and fully responsive websites that 
+				deliver a smooth experience for every user.
 			</p>
 		</li>
+
 		<li>
-			<h3 class="l-text">Support & Maintenance</h3>
+			<h3 class="small-title">Website Optimization</h3>
 			<p class="animated-text">
-				After launch, I fine-tune every detail that helps your website load faster, rank better, and 
-				deliver a seamless user experience. I also make sure the website is always up-to-date by handling
-				updates, bug fixes, and ongoing improvements. This will make sure you never have to worry about your
-				digital precense from dissapearing. 
+				I improve the new, or already existing website by testing it on performance, accessibility and
+				responsiveness. Trough progressive enhancements, code optimization, and UX refinements, I ensure
+				the website loads quicker, ranks higher, and converts more effectively.
+			</p>
+		</li>
+
+		<li>
+			<h3 class="small-title">Support & Maintenance</h3>
+			<p class="animated-text">
+				After launch, I keep fine-tuning every detail. I handle updates, security checks, bug fixes, and new
+				features to keep everything running smoothly to your liking. This will make sure you never have to 
+				worry about your digital precense from dissapearing. 
 			</p>
 		</li>
 	</ul>
@@ -45,25 +55,30 @@
 
 			+ p.animated-text {
 				color: var(--white);
-				margin-bottom: 6rem;
 				font-weight: 600;
 			}
 		}
 		
 		ul {
-			gap: 3rem 0;
 			display: grid;
+			justify-self: end;
+			width: fit-content;
+
+			gap: 3rem;
+			margin-top: 3rem;
 			grid-template-columns: 1fr;
 
 			li {
 				h3 {
-					margin-bottom: 1rem;
+					opacity: 1;
 					color: var(--white);
-				}
-
-				p.animated-text {
-					opacity: 0.6;
-					color: var(--white);
+					margin-bottom: 0.5rem;
+					
+					& + p.animated-text {
+						opacity: 0.6;
+						max-width: 42ch;
+						color: var(--white);
+					}
 				}
 			}
 		}
@@ -75,40 +90,13 @@
 					color: var(--white);
 				}
 			}
-			
-			ul {
-				li {
-					opacity: 0.1;
-				}
-			}
 		}
 
 		/* Breakpoint */
-		@media (min-width: 1024px) {
+		@media (min-width: 842px) {
 			ul {
-				gap: 6rem 0;
-				grid-template-columns: repeat(3, 1fr);
-
-				li {
-					h3 {
-						max-width: 12ch;
-					}
-
-					&:nth-of-type(1) {
-						grid-row: 1;
-						grid-column: 1;
-					}
-
-					&:nth-of-type(2) {
-						grid-row: 2;
-						grid-column: 2;
-					}
-
-					&:nth-of-type(3) {
-						grid-row: 3;
-						grid-column: 3;
-					}
-				}
+				gap: 6rem;
+				grid-template-columns: 1fr 1fr;
 			}
 		}
 	}  

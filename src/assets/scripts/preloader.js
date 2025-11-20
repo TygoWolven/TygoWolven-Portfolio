@@ -1,37 +1,45 @@
+// ------------------------------------------------------
+// Import Dependencies
+// ------------------------------------------------------
+
+// GSAP
 import { gsap } from "gsap";
 
-// -=-=-=- PRELOADER -=-=-=- //
+
+
+
+
+// ------------------------------------------------------
+// PRELOADER — Hide the website while it's loading
+// ------------------------------------------------------
 
 const preloaderElement = document.querySelector(".preloader");
 
-// Has the user visited already? No? Execute the function.
+// User has not visited yet? Execute the function.
 if (!sessionStorage.getItem('visited')) {
 	
 	// Mark the user as visited.
 	sessionStorage.setItem('visited', 'true');
 	
-	// Show the preloader-elements since they are hidden by default.
+	// Show the preloader.
 	preloaderElement.style.display = "flex";
-
-	startLoader();
+	
+	// Run the animation after a short delay.
+	document.addEventListener("DOMContentLoaded", () => {
+		setTimeout(startLoader, 2000)
+	});
 }
 
 function startLoader() {
-	gsap.to(".heading", 0.25, {
-		delay: 3,
-		opacity: 0,
-	});
-	gsap.to(".content", 0.25, {
-		delay: 3.2,
-		opacity: 0,
-	});
-	  
-	gsap.to(".preloader", 1.5, {
-		delay: 3.2,
+	gsap.to(".preloader", {
+		duration: 1.5,
 		height: 0,
-		stagger: {
-			amount: 0.5,
-		},
+		delay: 0.25,
 		ease: "power4.inOut",
 	});
-}
+
+	gsap.to(".preloader .content", {
+		duration: 0.25,
+		opacity: 0,
+	});
+};

@@ -2,10 +2,10 @@
 // Import Dependencies
 // ------------------------------------------------------
 
-// Lenis Smooth Scrolling
+// Lenis
 import Lenis from "lenis";
 
-// GSAP Animation
+// GSAP
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -125,33 +125,6 @@ gsap.utils.toArray(".parallax-container img").forEach((image) => {
 				start: "top bottom",	// Top of viewport, bottom of element
 				end: "bottom top",		// Bottom of viewport, top of element
 				scrub: 1,				// Link the animation to the scroll-timeline, but give it a 1s delay
-			},
-		},
-	);
-});
-
-
-
-
-
-// ------------------------------------------------------
-// SERVICES — Opacity Show Effect
-// ------------------------------------------------------
-
-gsap.utils.toArray("#services ul li").forEach(item => {
-	gsap.fromTo(
-		item, 
-		{ 
-			opacity: "0.1" 
-		},
-		{
-			opacity: "1",
-			ease: "none",
-			scrollTrigger: {
-				trigger: item,
-				start: "top 55%",
-				end: "bottom 45%",
-				toggleActions: "play reverse play reverse",
 			},
 		},
 	);

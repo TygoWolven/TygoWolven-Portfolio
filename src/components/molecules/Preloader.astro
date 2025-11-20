@@ -1,15 +1,14 @@
 <div class="preloader">
-    <span class="heading small-title">Front-end Portfolio 2025</span>
-    <span class="content xl-text">Welcome to the portfolio of Tygo Wolven, enjoy!</span>
+    <span class="small-title content">Loading. . .</span>
 </div>
 
 <style>
     div.preloader {
         display: none;
         position: fixed;
-        flex-direction: column;
         align-items: center;
         pointer-events: none;
+        flex-direction: column;
         justify-content: center;
 
         z-index: 1;
@@ -17,13 +16,8 @@
         height: 100%;
         background: var(--black);
 
-        span {
+        span.content {
             color: var(--white);
-            text-align: center;
-            
-            &.content {
-                max-width: 20ch;
-            }
         }
     }
 </style>
