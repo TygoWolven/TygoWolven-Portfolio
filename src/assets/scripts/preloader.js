@@ -26,7 +26,7 @@ if (!sessionStorage.getItem('visited')) {
 	
 	// Run the animation after a short delay.
 	document.addEventListener("DOMContentLoaded", () => {
-		setTimeout(startLoader, 2000)
+		setTimeout(startLoader, 2500)
 	});
 }
 
