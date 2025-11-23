@@ -1,5 +1,5 @@
 <section id="work">
-	<h2>Work</h2>
+	<h2 class="sticky-heading">Selected Projects</h2>
     <ul>
         <li>
             <a href="/fresk-digital">
@@ -45,12 +45,13 @@
         margin-top: 0;
         
         h2 {
+            max-width: 8ch;
             font-weight: unset;
             margin-bottom: 2rem;
-            
-            @media (min-width: 842px) {
-                margin-bottom: 4rem;
-            }
+
+            /* Hack to indent the 2nd line only. */
+            padding-left: 2ch;
+            text-indent: -2ch;
         }
 
         ul {
@@ -73,6 +74,9 @@
 
                     h3, p {
                         font-weight: unset;
+
+                        /* Make sure the text doesn't overflow. */
+                        line-height: 1.2;
                     }
                     
                     h3 {
@@ -86,6 +90,12 @@
             }
         }
         @media (min-width: 842px) {
+            h2 {
+                top: 9rem;
+                position: sticky;
+                margin-bottom: 4rem;
+            }
+
             ul {
                 grid-template-columns: repeat(10, 1fr);
                 
@@ -100,6 +110,23 @@
                                 height: 120%;
                                 width: unset;
                                 object-fit: unset;
+                            }
+                        }
+
+                        h3, p {
+                            background: var(--white);
+                            mix-blend-mode: difference;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        
+                            /* GSAP Animation */
+                            @media (scripting: enabled) {
+                                div {
+                                    background: var(--white);
+                                    mix-blend-mode: difference;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                }
                             }
                         }
                     }

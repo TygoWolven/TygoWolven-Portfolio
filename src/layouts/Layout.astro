@@ -1,9 +1,6 @@
 ---
 // Import Global CSS File
 import "../assets/styles/global.css";
-
-// Import Layout Components
-import Footer from "../components/organisms/Footer.astro";
 ---
 
 <!doctype html>
@@ -21,10 +18,9 @@ import Footer from "../components/organisms/Footer.astro";
 	</head>
 	<body>
 		<script src="../assets/scripts/preloader.js"></script>
-
+		
 		<slot />
-		<Footer />
-
+		
 		<script src="../assets/scripts/script.js"></script>
 	</body>
 </html>

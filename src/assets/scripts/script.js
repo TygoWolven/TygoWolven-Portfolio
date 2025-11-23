@@ -22,7 +22,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const lenis = new Lenis();
 
-// Sync Lenis with ScrollTrigger
+// Synchronize Lenis with GSAP's ScrollTrigger
 lenis.on("scroll", ScrollTrigger.update);
 
 // Run Lenis on GSAP’s ticker
@@ -59,21 +59,22 @@ document.addEventListener("visibilitychange", () => {
 // HEADING — Infinite Horizontal Scroll Animation
 // ------------------------------------------------------
 
-const animatedHeading = document.querySelector(".animated-heading"),
-      originalHeading = animatedHeading.textContent.trim();
-  
-// Duplicate the text to create a loop
-animatedHeading.innerHTML = `${originalHeading} - ${originalHeading}`;
+gsap.utils.toArray(".animated-heading").forEach((heading) => {
+  	const originalHeading = heading.textContent.trim();
 
-gsap.to(animatedHeading, {
-	x: "-50%",
-	ease: "none", 
-  	scrollTrigger: {
-  	  	trigger: animatedHeading, 
-  	  	start: "top bottom", 		// Top of viewport, bottom of element
-  	  	end: "bottom top", 			// Bottom of viewport, top of element
-  	  	scrub: true, 				// Link the animation to the scroll-timeline
-  	},
+	// Duplicate the headings to create a loop
+  	heading.innerHTML = `${originalHeading} - ${originalHeading} - ${originalHeading}`;
+
+  	gsap.to(heading, {
+  	  	x: "-50%",
+  	  	ease: "none",
+  	  	scrollTrigger: {
+  	  	  	trigger: heading,
+  	  	  	start: "top bottom",		// Top of viewport, bottom of element
+  	  	  	end: "bottom top",			// Bottom of viewport, top of element
+  	  	  	scrub: true,				// Link the animation to the scroll-timeline
+  	  	},
+  	});
 });
 
 
@@ -91,10 +92,10 @@ gsap.utils.toArray(".animated-text").forEach((text) => {
 	});
 
 	gsap.from(splitted.lines, {
-		yPercent: 150,									// TranslateY with 150%
+		yPercent: 150,							// TranslateY with 150%
 		duration: 1,
 		ease: "power4.out",	
-		stagger: { each: 0.1 },							// Delay each line with 0.1s
+		stagger: 0.1,							// Delay each line with 0.1s
 		scrollTrigger: {
 			trigger: text,
 			start: "top 75%",

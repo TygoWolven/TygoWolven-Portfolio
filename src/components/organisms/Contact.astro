@@ -1,103 +1,116 @@
 <section id="contact">
-    <h2>Contact</h2>
-    <!-- <div>
-        <form action="">
-            <label for="name">What's your name?</label>
-            <input type="text" id="name" placeholder="Full Name" />
-            
-            <label for="email">What's your email?</label>
-            <input type="text" id="email" placeholder="example@mail.com" />
-            
-            <label for="subject">What's your message?</label>
-            <textarea id="subject" placeholder="Tell me more about your project. Don't hestitate to include links if necessary." /> 
-    
-            <input type="submit" value="Send message" class="button dark">
-        </form>
-        <ul class="social-media">
-            <li>
-                <a href="https://github.com/TygoWolven" target="_blank">Github</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/tygo-wolven-091515241/" target="_blank">Linkedin</a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/tygowolvenn_/" target="_blank">Instagram</a>
-            </li>
-        </ul>
-    </div> -->
+    <h2 class="animated-heading">Let's talk</h2>
+
+    <div class="flex-container">
+        <div class="left-column">
+            <p class="animated-text l-text">Any questions? Interested in utilizing my services? Don't hestitate to hit me up!</p>
+            <a href="mailto:tygowolven@gmail.com" class="button dark">Email me</a>
+        </div>
+        
+        <div class="right-column">
+            <div class="navigation">
+                <nav>
+                    <h3 class="small-title">Navigation</h3>
+                    <ul>
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#work">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="social-media">
+                <h3 class="small-title">Socials</h3>
+                <ul>
+                    <li>
+                        <a href="https://github.com/TygoWolven" target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/tygo-wolven-091515241/" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/tygowolvenn_/" target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 
 <style>
     section#contact {
         margin: 0;
+        overflow: hidden;
         padding: var(--section-width);
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
         h2 {
+            margin-bottom: 9rem;
             font-weight: unset;
-        }
-        
-        p.animated-text {
-            margin-bottom: 4rem;
-            font-weight: 600;
-            max-width: 22ch;
+            white-space: nowrap;
+            letter-spacing: -0.25rem;
         }
 
-        div {
-            display: flex;
-            margin-top: 6rem;
-            justify-content: space-between;
-
-            form {
+        .flex-container {
+            .left-column {
+                .l-text {
+                    max-width: 22ch;
+                    margin-bottom: 3rem;
+                }
+            }
+    
+            .right-column {
+                gap: 6rem;
                 display: flex;
-                min-width: 50%;
-                flex-direction: column;
-    
-                input:not(.button), label, textarea {
-                    font-size: 24px;
-                    background: none;
-                    border: none;
-                }
-    
-                label {
-                    padding-top: 2rem;
-                    border-top: 1px solid var(--grey100);
-                }
-                
-                textarea,
-                input:not(.button) {
-                    padding-bottom: 2rem;
+                margin-top: 6rem;
 
-                    &::placeholder {
-                        opacity: 0.6;
-                        color: var(--black);
+                h3 {
+                    opacity: 1;
+                    margin-bottom: 0.5rem;
+                }
+
+                ul {
+                    opacity: 0.6;
+                }
+
+                div.social-media {
+                    ul {
+    
                     }
                 }
     
-                textarea {
-                    padding-bottom: 6rem;
-                    border-bottom: 1px solid var(--grey100);
-                }
-                
-                .button {
-                    margin-top: 2rem;
-                    width: fit-content;
-                }
-            }
-
-            ul.social-media {
-                &::before {
-                    content: "Social Media";
-                }
-
-                li {
-                    opacity: 0.6;
+                div.navigation {
+                    nav {
+                        ul {
+    
+                        }
+                    }
                 }
             }
         }
+    }
 
+    @media (min-width: 1024px) {
+        section#contact {
+            .flex-container {
+                display: flex;
+                justify-content: space-between;
+
+                .right-column {
+                    margin-top: unset;
+                }
+            }
+        }
     }
 </style>
