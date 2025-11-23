@@ -86,23 +86,25 @@ gsap.utils.toArray(".animated-heading").forEach((heading) => {
 // ------------------------------------------------------
 
 gsap.utils.toArray(".animated-text").forEach((text) => {
-	const splitted = new SplitText(text, {
-		autoSplit: true,
-		type: "lines",
-		mask: "lines",
-	});
-
-	gsap.from(splitted.lines, {
-		yPercent: 150,							// TranslateY with 150%
-		duration: 1,
-		ease: "power4.out",	
-		stagger: 0.1,							// Delay each line with 0.1s
-		scrollTrigger: {
-			trigger: text,
-			start: "top 80%",
-			toggleActions: "play none none reverse",
-		},
-	});
+  	new SplitText(text, {
+  	  	type: "lines",
+  	  	mask: "lines",
+  	  	autoSplit: true,
+  	  	onSplit: (splitted) => {
+  	  	  	// Animate the freshly split lines
+  	  	  	return gsap.from(splitted.lines, {
+  	  	  	  	yPercent: 150,							// TranslateY with 150%
+  	  	  	  	duration: 1,							// Duration is 1 second
+  	  	  	  	ease: "power4.out",
+  	  	  	  	stagger: 0.1,							// Delay each line with 0.1s
+  	  	  	  	scrollTrigger: {
+  	  	  	  	  	trigger: text,
+  	  	  	  	  	start: "top 80%",
+  	  	  	  	  	toggleActions: "play none none reverse",
+  	  	  	  	},
+  	  	  	});
+  	  	},
+  	});
 });
 
 
