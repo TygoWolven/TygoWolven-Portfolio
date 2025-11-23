@@ -22,15 +22,15 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const lenis = new Lenis();
 
-// Synchronize Lenis with GSAP's ScrollTrigger
-lenis.on("scroll", ScrollTrigger.update);
+// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+lenis.on('scroll', ScrollTrigger.update);
 
-// Run Lenis on GSAP’s ticker
+// Synchronize Lenis with GSAP's tick to ensure they update their animation at the same time
 gsap.ticker.add((time) => {
-	lenis.raf(time * 1000); // GSAP → seconds | Lenis → milliseconds
+  lenis.raf(time * 1000); // Convert time from seconds to milliseconds
 });
 
-// Disable lag smoothing (prevents scroll delay)
+// Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
 
 
@@ -45,7 +45,7 @@ const originalTitle = document.title;
 
 document.addEventListener("visibilitychange", () => {
 	if (document.hidden) {
-		document.title = "You better come back!";
+		document.title = "Where are you going?!";
 	} else {
 		document.title = originalTitle;
 	}
@@ -56,7 +56,7 @@ document.addEventListener("visibilitychange", () => {
 
 
 // ------------------------------------------------------
-// HEADING — Infinite Horizontal Scroll Animation
+// HEADING — TransformX on Scroll
 // ------------------------------------------------------
 
 gsap.utils.toArray(".animated-heading").forEach((heading) => {
@@ -82,11 +82,12 @@ gsap.utils.toArray(".animated-heading").forEach((heading) => {
 
 
 // ------------------------------------------------------
-// TEXT — Line-by-Line Reveal on Scroll
+// TEXT — Reveal on Scroll
 // ------------------------------------------------------
 
 gsap.utils.toArray(".animated-text").forEach((text) => {
 	const splitted = new SplitText(text, {
+		autoSplit: true,
 		type: "lines",
 		mask: "lines",
 	});
@@ -98,7 +99,7 @@ gsap.utils.toArray(".animated-text").forEach((text) => {
 		stagger: 0.1,							// Delay each line with 0.1s
 		scrollTrigger: {
 			trigger: text,
-			start: "top 75%",
+			start: "top 80%",
 			toggleActions: "play none none reverse",
 		},
 	});
