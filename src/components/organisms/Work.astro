@@ -48,10 +48,6 @@
             max-width: 8ch;
             font-weight: unset;
             margin-bottom: 2rem;
-
-            /* Hack to indent the 2nd line only. */
-            padding-left: 2ch;
-            text-indent: -2ch;
         }
 
         ul {
@@ -91,9 +87,11 @@
         }
         @media (min-width: 842px) {
             h2 {
-                top: 9rem;
-                position: sticky;
                 margin-bottom: 4rem;
+                
+                /* Hack to indent the 2nd line only. */
+                padding-left: 2ch;
+                text-indent: -2ch;
             }
 
             ul {
@@ -110,23 +108,6 @@
                                 height: 120%;
                                 width: unset;
                                 object-fit: unset;
-                            }
-                        }
-
-                        h3, p {
-                            background: var(--white);
-                            mix-blend-mode: difference;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
-                        
-                            /* GSAP Animation */
-                            @media (scripting: enabled) {
-                                div {
-                                    background: var(--white);
-                                    mix-blend-mode: difference;
-                                    -webkit-background-clip: text;
-                                    -webkit-text-fill-color: transparent;
-                                }
                             }
                         }
                     }
