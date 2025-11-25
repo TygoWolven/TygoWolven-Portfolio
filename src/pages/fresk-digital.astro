@@ -1,97 +1,91 @@
 ---
 // Import Layout
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/organisms/Header.astro';
 ---
 
 <Layout>
+	<Header textColor="black" />
 	<main>
 		<section id="home">
-			<ul class="navigation">
+    		<h1>Fresk Digital</h1>
+		</section>
+		
+		<section id="preview">
+			<img src="/images/Macbook-Fresk-Digital.png" alt="Laptop Preview">
+		</section>
+
+		<section id="about">
+			<ul>
 				<li>
-					<a href="/">Return to <span>Homepage</span></a>
+					<p class="m-text">Product-type <span>Company Dashboard</span></p>
 				</li>
 				<li>
-					<a href="/#contact" class="button dark">Contact me</a>
-				</li>
-			</ul>
-
-    		<h1 class="big-title">Fresk Digital</h1>
-
-			<img src="/images/Fresk-Digital.png" alt="Desktop Preview">
-
-			<ul class="information">
-				<li>
-					<p class="s-text">Product-type <span>Company Dashboard</span></p>
-				</li>
-				<li>
-					<p class="s-text">Services <span>Design & Development</span></p>
+					<p class="m-text">Services <span>Design & Development</span></p>
 				</li>
 			</ul>
 
 			<p class="animated-text m-text">
 				In the first year of my study, I designed and developed a data-driven dashboard that visualizes 
 				Google Analytics, Linkedin Analytics and Hotjar Analytics of a company called Fresk Digital. 
+			</p>
 
-				<br><br>
-	
+			<p class="animated-text m-text">
 				With the short ammount of time I had, I focused on the Google Analytics only, combined with some 
 				view-transitions to expand my knowledge about the compact funcitonalities.
 			</p>
 		</section>
 
-		<section id="preview">
-			<img src="/images/Macbook-Fresk-Digital.png" alt="Laptop Preview">
-		</section>
-
-		<section id="features">
-			<article>
-				<h3 class="small-title">Login</h3>
-				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
-			</article>
-			<article>
-				<h3 class="small-title">Dynamic Data</h3>
-				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
-			</article>
-			<article>
-				<h3 class="small-title">Chart.js</h3>
-				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
-			</article>
-			<article>
-				<h3 class="small-title">View-transitions</h3>
-				<p class="animated-text">Aangezien dit platform alleen voor internen is bedoeld moest er een login-pagina komen om toegang te verlenen.</p>
-			</article>
-			
-			<img src="/images/Iphone-Fresk-Digital.png" alt="Mobile Preview">
-		</section>
-		
-		<section id="challenge">
-			<p class="animated-text m-text">
-				Each project was given me a unique challenge. In this project it was working with interactive 
-				charts and view-transitions. With API-Keys I managed to render some data of the Google Analytics. 
-			</p>
+		<section id="next-case">
+			<h2 class="animated-heading">Next Case</h2>
+			<a href="/de-hallen-amsterdam-west">
+				<div class="image-wrapper">
+					<img src="/images/De-Hallen.png" alt="">
+				</div>
+			</a>
 		</section>
 	</main>
 </Layout>
 
 <style>
-	p.m-text {
-		max-width: 48ch;
+	section {
+		p.m-text {
+			max-width: 48ch;
+		}
 	}
-
+	
 	section#home {
-		margin-top: 1rem;
-
-		@media (min-width: 842px) {
-			margin-top: 2rem;
-		}
-
 		h1 {
-			margin-top: 9rem;
+			margin-top: 12rem;
+			font-size: clamp(48px, 12vw, 144px);
 		}
-
+	}
+	
+	section#preview {
+		margin: 0;
+		padding: var(--section-width);
+		background: var(--radial-blue);
+	
+		display: flex;
+		justify-content: center;
+		
+		img {
+			width: calc(100% - 2rem);
+			max-width: 1024px;
+		}
+	}
+	
+	section#about {
 		ul {
+			gap: 2rem;
 			display: flex;
+			flex-direction: column;
 			justify-content: space-between;
+			margin-bottom: 6rem;
+			
+			@media (min-width: 842px) {
+				flex-direction: row;
+			}
 
 			li {
 				a, p {
@@ -104,80 +98,66 @@ import Layout from '../layouts/Layout.astro';
 					} 	
 				}
 			}
-
-			&.information {
-				gap: 2rem;
-				flex-direction: column;
-
-				@media (min-width: 842px) {
-					flex-direction: row;
-				}
-			}
-		}
-
-		img {
-			width: 100%;
-			margin: 4rem 0;
 		}
 
 		p.m-text {
-			margin-top: 9rem;
+			&:nth-of-type(2) {
+				margin-top: 2em;
+			}
 		}
 	}
 
-	section#preview {
+	section#next-case {
 		margin: 0;
-		height: 100vh;
-		background: var(--black);
+		overflow: hidden;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		
-		img {
-			width: calc(100% - 2rem);
-			max-width: 844px;
-		}
-	}
-
-	section#features {
-		display: grid;
-		grid-template-columns: 1fr;
-
-		article {
-			align-self: center;
-			justify-self: start;
+		h2 {
 			margin-bottom: 2rem;
+            white-space: nowrap;
+            letter-spacing: -0.25rem;
+		}
+		
+		a {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			background: var(--black);
+			padding: var(--section-width);
 
 			h3 {
-				margin-bottom: 8px;
+				color: var(--white);
+				margin-bottom: 3rem;
+				margin-bottom: -2em;
+				transition: 0.5s ease;
+			}
 
-				+ p {
+			div.image-wrapper {
+				display: flex;
+				overflow: hidden;
+				justify-content: center;
+				border-bottom: 2px solid var(--grey400);
+
+				img {
+					width: 100%;
+					transition: 0.5s ease;
+					transform: translateY(50%);
+	
+					@media (min-width: 842px) {
+						max-width: 60%;
+					}
+				}
+			}
+			
+			&:hover {
+				h3 {
 					opacity: 0.6;
-					max-width: 32ch;
 				}
-			}
-		}
 
-		img {
-			max-width: 100%;
-		}
-
-		/* Breakpoint */
-		@media (min-width: 1024px) {
-			grid-template-rows: 1fr 1fr;
-			grid-template-columns: 2fr 1fr 2fr;
-
-			article {
-				&:nth-of-type(2n) {
-					justify-self: end;
+				div.image-wrapper {
+					img {
+						transform: translateY(20%);
+					}
 				}
-			}
-
-			img {
-				max-height: 80vh;
-				grid-row: 1/3;
-				grid-column: 2/3;
 			}
 		}
 	}

@@ -1,22 +1,7 @@
 /* Fonts */
 @font-face {
-    font-family: "Arges";
-    src: url("/fonts/Arges-VariableFont_wght.ttf");
-}
-
-@font-face {
     font-family: "Poppins-Regular";
     src: url("/fonts/Poppins-Regular.ttf");
-}
-
-@font-face {
-    font-family: "Poppins-SemiBold";
-    src: url("/fonts/Poppins-SemiBold.ttf");
-}
-
-@font-face {
-    font-family: "Doto";
-    src: url("/fonts/Doto-VariableFont_wght.ttf");
 }
 
 
@@ -89,7 +74,6 @@ html {
         background: var(--white);
 
         section {
-            scroll-margin-top: 6rem;
             margin: var(--section-width);
             
             h1,
@@ -97,13 +81,15 @@ html {
             h3,
             h4 {
                 line-height: 100%;
+                font-weight: unset;
             }
 
-            h1,
+            h1.animated-heading,
             h2.animated-heading {
                 font-size: clamp(96px, 16vw, 196px);
             }
 
+            h1,
             h2 {
                 font-size: clamp(64px, 12vw, 196px);
             }
@@ -125,9 +111,9 @@ html {
 .small-title {
     opacity: 0.6;
     font-size: 14px;
+    font-weight: 600;
     letter-spacing: 0;
     text-transform: uppercase;
-    font-family: "Poppins-SemiBold", Arial, Helvetica, sans-serif;
     
     @media (min-width: 842px) {
         font-size: 16px;
@@ -136,12 +122,6 @@ html {
 
 .big-title {
     font-size: clamp(36px, 6vw, 128px);
-}
-
-.variant-title {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-family: "Arges", Arial, Helvetica, sans-serif;
 }
 
 .s-text {

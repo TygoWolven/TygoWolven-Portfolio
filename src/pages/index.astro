@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Preloader from '../components/molecules/Preloader.astro';
 
 // Import all the layout-components
+import Header from '../components/organisms/Header.astro';
 import Home from '../components/organisms/Home.astro';
 import About from '../components/organisms/About.astro';
 import Work from '../components/organisms/Work.astro';
@@ -18,7 +19,9 @@ import Contact from '../components/organisms/Contact.astro';
 			content that loads when entering the page, and I want the
 			user to see the preloader first.
 		-->
-		<Preloader />
+		<!-- <Preloader /> -->
+
+		<Header textColor="white" />
 
 		<Home />
 

@@ -128,7 +128,7 @@ gsap.utils.toArray(".parallax-container img").forEach((image) => {
 				trigger: image,
 				start: "top bottom",	// Top of viewport, bottom of element
 				end: "bottom top",		// Bottom of viewport, top of element
-				scrub: 1,				// Link the animation to the scroll-timeline, but give it a 1s delay
+				scrub: true,			// Link the animation to the scroll-timeline
 			},
 		},
 	);

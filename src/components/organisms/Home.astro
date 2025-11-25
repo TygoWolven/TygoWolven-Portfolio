@@ -1,78 +1,22 @@
 <section id="home">
-    <ul class="navigation">
-        <li>
-            <p>Status <span>Looking for work</span></p>
-        </li>
-        <li>
-            <p>Expertise <span>Frontend Design & Development</span></p>
-        </li>
-        <li>
-            <p>Based in <span>Amsterdam, the Netherlands</span></p>
-        </li>
-        <li>
-            <a href="#contact" class="button light">Contact me</a>
-        </li>
-    </ul>
     <h1 class="animated-heading">Tygo Wolven</h1>
 </section>
 
 <style>
     section#home {
-        display: flex;
-        overflow: hidden;
-        flex-direction: column;
-        justify-content: space-between;
-        
         margin: 0;
         height: 100vh;
+        overflow: hidden;
         padding: var(--section-width);
         background: var(--radial-blue);
+        padding-bottom: 6rem;
 
-        padding-bottom: 0;
-        padding-top: 1rem;
-
-        @media (min-width: 842px) {
-            padding-top: 2rem;
-        }
-
-        ul.navigation {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            li {
-                p,
-                span {
-                    color: var(--white);
-                }
-
-                p {
-                    display: flex;
-                    flex-direction: column;
-                    
-                    span {
-                        opacity: 0.6;
-                    }
-                }
-            }
-
-            @media (max-width: 1280px) {
-                li:nth-of-type(3) {
-                    display: none;
-                }
-            }
-
-            @media (max-width: 842px) {
-                li:nth-of-type(2) {
-                    display: none;
-                }
-            }
-        }
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
 
         h1 {
-            margin-bottom: 6rem;
             color: var(--white);
-            font-weight: unset;
             white-space: nowrap;
             letter-spacing: -0.25rem;
         }
