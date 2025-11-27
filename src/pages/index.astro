@@ -1,15 +1,13 @@
 ---
-// Import the main-layout
+// Import the Main Layout
 import Layout from '../layouts/Layout.astro';
-import Preloader from '../components/molecules/Preloader.astro';
 
-// Import all the layout-components
-import Header from '../components/organisms/Header.astro';
+// Import the Layout Components
+import Preloader from '../components/molecules/Preloader.astro';
 import Home from '../components/organisms/Home.astro';
-import About from '../components/organisms/About.astro';
+import Intro from '../components/organisms/Intro.astro';
 import Work from '../components/organisms/Work.astro';
 import Services from '../components/organisms/Services.astro';
-import Contact from '../components/organisms/Contact.astro';
 ---
 
 <Layout>
@@ -21,16 +19,12 @@ import Contact from '../components/organisms/Contact.astro';
 		-->
 		<!-- <Preloader /> -->
 
-		<Header textColor="white" />
-
 		<Home />
 
-		<About />
+		<Intro />
 
 		<Work />
 
 		<Services />
-
-		<Contact />
 	</main>
 </Layout>

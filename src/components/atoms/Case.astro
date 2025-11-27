@@ -1,0 +1,62 @@
+---
+// Dynamic Content with Astro Props
+const { link, image, title, description } = Astro.props;
+---
+
+<li>
+    <a href={ link }>
+        <div class="parallax-container">
+            <img src={ image } alt="Preview of the case">
+        </div>
+        <h3 class="animated-text">{ title }</h3>
+        <p class="animated-text">{ description }</p>
+    </a>
+</li>
+
+<style>
+    li {
+        a {
+            .parallax-container {
+                aspect-ratio: 1;
+                overflow: hidden;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+            h3, p {
+                /* Make sure the text doesn't overflow. */
+                line-height: 1.2;
+            }
+            
+            h3 {
+                margin: 1rem 0 0.25rem 0;
+            }
+            
+            p {
+                opacity: 0.6;
+            }
+        }
+    }
+    
+    @media (min-width: 842px) {
+        li {
+            a {
+                .parallax-container {
+                    display: flex;
+                    align-items: end;
+                    justify-content: center;
+                    
+                    img {
+                        height: 120%;
+                        width: unset;
+                        object-fit: unset;
+                    }
+                }
+            }
+        }
+    }
+</style>

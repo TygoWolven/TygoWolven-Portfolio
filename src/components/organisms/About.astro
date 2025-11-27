@@ -1,52 +1,60 @@
+---
+import MediumText from "../atoms/MediumText.astro"
+
+const { product_type, services, first_paragraph, second_paragraph } = Astro.props;
+---
+
 <section id="about">
-    <h2 class="small-title">What do I do?</h2>
-	<p class="animated-text xl-text">
-		My passion lies in bringing dreams to life by designing and 
-		developing complex, user-friendly, interactive web-applications.
-	</p>
+	<ul>
+		<li>
+			<MediumText>
+				Product-type <span>{ product_type }</span>
+			</MediumText>
+		</li>
+		<li>
+			<MediumText>
+				Services <span>{ services }</span>
+			</MediumText>
+		</li>
+	</ul>
 
-	<div class="alignment-wrapper">
-		<h3 class="small-title">In doing so</h3>
-		<p class="animated-text">
-			I'm implementing core web principes, tools, frameworks, API's and databases, using the 
-			right technologies while following standard design and development methodologies.
-		</p>
-	
-		<h3 class="small-title">With the goal to</h3>
-		<p class="animated-text">
-			Make the web a better place for everyone. Taking care of responsiveness, accessibility, 
-			performance and progressive enhancements, my creations are useable for everyone.
-		</p>
+	<MediumText>
+        { first_paragraph }
+    </MediumText>
 
-		<a href="#services" class="button dark">Find out how</a>
-	</div>
+	<MediumText>
+        { second_paragraph }
+	</MediumText>
 </section>
 
 <style>
-    section#about {		
-		h2.small-title {
-			margin-bottom: 1rem;
-		}
+    section#about {
+        ul {
+            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 6rem;
+            
+            @media (min-width: 842px) {
+                flex-direction: row;
+            }
 
-		p.animated-text {
-			font-weight: 600;
-		}
-
-		div.alignment-wrapper {
-			margin-top: 3rem;
-			justify-self: end;
-
-			h3 {
-				opacity: 1;
-				margin-bottom: 0.5rem;
-	
-				& + p.animated-text {
-					opacity: 0.6;
-					max-width: 42ch;
-					font-weight: 100;
-					margin-bottom: 3rem;
-				}
-			}
-		}
+            li {
+                a, p {
+                    display: flex;
+                    flex-direction: column;
+            
+                    span {
+                        opacity: 0.6;
+                        font-size: inherit;
+                    } 	
+                }
+            }
+        }
+        
+        p.m-text:nth-of-type(2) {
+            margin-top: 2rem;
+        }
     }
 </style>

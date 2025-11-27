@@ -1,0 +1,114 @@
+---
+import Cases from "./Cases.astro"
+
+const currentPath = Astro.url.pathname;
+const freskURL = currentPath === "/fresk-digital";
+const hallenURL = currentPath === "/de-hallen";
+const businessURL = currentPath === "/business-news-radio";
+const blogURL = currentPath === "/learning-blog";
+---
+
+<section id="next-case">
+	<h2 class="animated-heading">Next up</h2>
+	<div class="list-wrapper">
+        { freskURL && (
+            <Cases 
+                deHallen="show"
+                businessNewsRadio="show"
+                learningBlog="show"
+            />
+        )}
+
+        { hallenURL && (
+            <Cases 
+                freskDigital="show"
+                businessNewsRadio="show"    
+                learningBlog="show"
+            />
+        )}
+        
+        { businessURL && (
+            <Cases 
+                freskDigital="show"
+                deHallen="show"
+                learningBlog="show" 
+            />
+        )}
+
+        { blogURL && (
+            <Cases 
+                freskDigital="show"
+                deHallen="show"
+                businessNewsRadio="show"
+            />
+        )}
+	</div>
+</section>
+
+<style>
+	section#next-case {
+		margin: 0;
+		overflow: hidden;
+
+		h2 {
+			margin-bottom: 2rem;
+            white-space: nowrap;
+            letter-spacing: -0.25rem;
+		}
+
+		div.list-wrapper {
+			background: var(--black);
+			padding: var(--section-width);
+			
+			ul {
+				gap: 1rem;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+
+				li {
+					a {
+						.parallax-container {
+							img {
+								width: 100%;
+								object-fit: cover;
+							}
+
+						}
+
+						h3, p {
+							/* No GSAP Animation */
+							color: var(--white);
+
+							/* GSAP Animation */
+							@media (scripting: enabled) {
+								div {
+									color: var(--white);
+								}
+							}
+						}
+					}
+				}
+			}
+            
+            @media (max-width: 1280px) {
+                ul {
+                    grid-template-columns: 1fr 1fr;
+                    
+                    li:nth-of-type(3) {
+                        display: none;
+                    }
+                }
+            }
+
+            @media (max-width: 842px) {
+                ul {
+                    grid-template-columns: 1fr;
+
+                    li:nth-of-type(2) {
+                        display: none;
+                    }
+                }
+            }
+		}
+	}
+</style>

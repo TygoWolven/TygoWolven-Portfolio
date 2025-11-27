@@ -1,43 +1,15 @@
+---
+import Cases from "./Cases.astro"
+---
+
 <section id="work">
 	<h2 class="sticky-heading">Work</h2>
-    <ul>
-        <li>
-            <a href="/fresk-digital">
-                <div class="parallax-container">
-                    <img src="/images/Fresk-Digital-Mockup.png" alt="">
-                </div>
-                <h3 class="animated-text">Fresk Digital</h3>
-                <p class="animated-text">Data Visualization Dashboard</p>
-            </a>
-        </li>
-        <li>
-            <a href="/not-found">
-                <div class="parallax-container">
-                    <img src="/images/De-Hallen-Mockup.png" alt="">
-                </div>
-                <h3 class="animated-text">De Hallen Amsterdam West</h3>
-                <p class="animated-text">Marketplace for services</p>
-            </a>
-        </li>
-        <li>
-            <a href="/not-found">
-                <div class="parallax-container">
-                    <img src="/images/BNR-Mockup.png" alt="">
-                </div>
-                <h3 class="animated-text">Business News Radio</h3>
-                <p class="animated-text">Promotion landing-page for podcasts</p>
-            </a>
-        </li>
-        <li>
-            <a href="/not-found">
-                <div class="parallax-container">
-                    <img src="/images/Learning-Blog-Mockup.png" alt="">
-                </div>
-                <h3 class="animated-text">Learning Blog</h3>
-                <p class="animated-text">Notebook for my classes</p>
-            </a>
-        </li>
-    </ul>
+    <Cases 
+        freskDigital="show"
+        deHallen="show"
+        businessNewsRadio="show"
+        learningBlog="show"
+    />
 </section>
 
 <style>
@@ -52,35 +24,8 @@
             gap: 3rem;
             display: grid;
             grid-template-columns: 1fr;
-
-            li {
-                a {
-                    .parallax-container {
-                        aspect-ratio: 1;
-                        overflow: hidden;
-                        
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-
-                    h3, p {
-                        /* Make sure the text doesn't overflow. */
-                        line-height: 1.2;
-                    }
-                    
-                    h3 {
-                        margin: 1rem 0 0.25rem 0;
-                    }
-                    
-                    p {
-                        opacity: 0.6;
-                    }
-                }
-            }
         }
+
         @media (min-width: 842px) {
             h2 {
                 margin-bottom: 4rem;
@@ -90,20 +35,6 @@
                 grid-template-columns: repeat(10, 1fr);
                 
                 li {
-                    a {
-                        .parallax-container {
-                            display: flex;
-                            align-items: end;
-                            justify-content: center;
-                            
-                            img {
-                                height: 120%;
-                                width: unset;
-                                object-fit: unset;
-                            }
-                        }
-                    }
-
                     &:nth-of-type(1) {
                         grid-column: 5/11;
                         grid-row: 1;
@@ -143,6 +74,7 @@
                 }
             }
         }
+
         @media (min-width: 1024px) {
             ul {
                 li {
@@ -156,7 +88,7 @@
                     
                     &:nth-of-type(3) {
                         grid-column: 7/11;
-                            margin-bottom: -33%;
+                        margin-bottom: -33%;
                     }
 
                     &:nth-of-type(4) {

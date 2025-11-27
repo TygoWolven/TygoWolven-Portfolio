@@ -1,0 +1,17 @@
+<p class="animated-text m-text">
+    <slot />
+</p>
+
+<style>
+    p.m-text {
+        max-width: 48ch;
+        font-size: clamp(18px, 2vw, 32px);
+
+        /* GSAP Animation */
+        @media (scripting: enabled) {
+            div {
+                font-size: clamp(18px, 2vw, 32px);
+            }
+        }
+    }
+</style>

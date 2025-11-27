@@ -1,0 +1,35 @@
+---
+// Dynamic Content with Astro Props
+const { title, image } = Astro.props;
+---
+
+<section id="home">
+    <h1>{ title }</h1>
+</section>
+
+<section id="preview">
+    <img src={ image } alt="Laptop preview of the case">
+</section>
+
+<style>
+    section#home {
+		h1 {
+			margin-top: 12rem;
+			font-size: clamp(48px, 12vw, 144px);
+		}
+	}
+    
+	section#preview {
+		margin: 0;
+		padding: var(--section-width);
+		background: var(--radial-blue);
+	
+		display: flex;
+		justify-content: center;
+		
+		img {
+			width: calc(100% - 2rem);
+			max-width: 1024px;
+		}
+	}
+</style>

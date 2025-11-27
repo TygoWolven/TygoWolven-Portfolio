@@ -1,0 +1,140 @@
+<section id="contact">
+    <h2 class="animated-heading">Let's talk</h2>
+
+    <footer>
+        <p class="l-text">Tygo Wolven</p>
+        
+        <div class="column justify-container">
+            <div>
+                <h3 class="small-title">Contact</h3>
+                <a href="mailto:tygowolven@gmail.com">tygowolven@gmail.com</a>
+            </div>
+
+            <div>
+                <h3 class="small-title">Based in</h3>
+                <p>Amsterdam, <span>the Netherlands</span></p>
+            </div>
+
+            <div>
+                <h3 class="small-title">Working Hours</h3>
+                <p>Monday-Friday <span>09:00 - 18:00</span></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div>
+                <h3 class="small-title">Navigation</h3>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/#about">About</a>
+                    </li>
+                    <li>
+                        <a href="/#work">Work</a>
+                    </li>
+                    <li>
+                        <a href="/#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div>
+                <h3 class="small-title">Follow me</h3>
+                <ul>
+                    <li>
+                        <a href="https://github.com/TygoWolven" target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/tygo-wolven-091515241/" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/tygowolvenn_/" target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<style>
+    section#contact {
+        margin: 0;
+        overflow: hidden;
+        padding: var(--section-width);
+
+        h2 {
+            margin-bottom: 9rem;
+            white-space: nowrap;
+            letter-spacing: -0.25rem;
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            p.l-text {
+                display: none;
+            }
+            
+            @media (min-width: 1240px) {
+                gap: 6rem;
+                grid-template-columns: repeat(3, 1fr);
+
+                p.l-text {
+                    display: flex;
+                }
+            }
+
+            div.column {
+                div {
+                    margin-bottom: 3rem;
+
+                    h3 {
+                        opacity: 1;
+                        padding-bottom: 0.5rem;
+                        border-bottom: 1px solid var(--grey100);
+                    }
+
+                    ul {
+                        margin-top: 1rem;
+
+                        li {
+                            text-align: right;
+                        }
+                    }
+
+                    a,
+                    p {
+                        opacity: 0.6;
+                    }
+                    
+                    p {                        
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                &.justify-container {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    a {
+                        width: 100%;
+                        display: block;
+                    }
+
+                    a,
+                    p {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+</style>

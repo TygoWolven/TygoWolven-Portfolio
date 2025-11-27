@@ -99,7 +99,7 @@ gsap.utils.toArray(".animated-text").forEach((text) => {
   	  	  	  	stagger: 0.1,							// Delay each line with 0.1s
   	  	  	  	scrollTrigger: {
   	  	  	  	  	trigger: text,
-  	  	  	  	  	start: "top 80%",
+  	  	  	  	  	start: "top 85%",
   	  	  	  	  	toggleActions: "play none none reverse",
   	  	  	  	},
   	  	  	});

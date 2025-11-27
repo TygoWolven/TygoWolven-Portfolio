@@ -1,0 +1,42 @@
+---
+const { freskDigital, deHallen, businessNewsRadio, learningBlog } = Astro.props;
+import Case from "../atoms/Case.astro";
+---
+
+<ul>
+    { freskDigital && (
+        <Case 
+            link="/fresk-digital"
+            image="/images/Mockup-Fresk-Digital.png"
+            title="Fresk Digital"
+            description="Data Visualization Dashboard"
+        />
+    )}
+
+    { deHallen && (
+        <Case 
+            link="/de-hallen"
+            image="/images/Mockup-De-Hallen.png"
+            title="De Hallen"
+            description="Marketplace for services"
+        />
+    )}
+
+    { businessNewsRadio && (
+        <Case 
+            link="/business-news-radio"
+            image="/images/Mockup-BNR.png"
+            title="Business News Radio"
+            description="Promotion landing-page for podcasts"
+        />
+    )}
+    
+    { learningBlog && (
+        <Case 
+            link="/learning-blog"
+            image="/images/Mockup-Learning-Blog.png"
+            title="Learning Blog"
+            description="Notebook for my classes"
+        />
+    )}
+</ul>
