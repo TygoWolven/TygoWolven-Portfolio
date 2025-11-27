@@ -63,7 +63,7 @@ gsap.utils.toArray(".animated-heading").forEach((heading) => {
   	const originalHeading = heading.textContent.trim();
 
 	// Duplicate the headings to create a loop
-  	heading.innerHTML = `${originalHeading} - ${originalHeading} - ${originalHeading}`;
+  	heading.innerHTML = `${originalHeading} - ${originalHeading} - ${originalHeading} - ${originalHeading}`;
 
   	gsap.to(heading, {
   	  	x: "-50%",

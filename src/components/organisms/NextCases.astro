@@ -2,10 +2,10 @@
 import Cases from "./Cases.astro"
 
 const currentPath = Astro.url.pathname;
-const freskURL = currentPath === "/fresk-digital";
-const hallenURL = currentPath === "/de-hallen";
-const businessURL = currentPath === "/business-news-radio";
-const blogURL = currentPath === "/learning-blog";
+const freskURL = currentPath.startsWith("/fresk-digital");
+const hallenURL = currentPath.startsWith("/de-hallen");
+const businessURL = currentPath.startsWith("/business-news-radio");
+const blogURL = currentPath.startsWith("/learning-blog");
 ---
 
 <section id="next-case">
